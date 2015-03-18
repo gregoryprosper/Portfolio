@@ -1,0 +1,97 @@
+<?php
+
+for ($j = 0; $j < count( $result->data ); $j++)
+{   
+    
+    $propId = $result->data[$j]['id'];
+    $listingImage = substr($result->data[$j]['cover'],3);
+    $street = $result->data[$j]['Street'];
+    $city = $result->data[$j]['City'];
+    $state = $result->data[$j]['State'];
+    $zip = $result->data[$j]['zipCode'];
+    $baths = $result->data[$j]['Baths'];
+    $beds = $result->data[$j]['Beds'];
+    $size = $result->data[$j]['Size'];
+    $price = $result->data[$j]['Price'];
+    $petsAllowed = $result->data[$j]['Pets_Allowed_Bool'];
+    $forRent = $result->data[$j]['For_Rent_Bool'];
+    $description = $result->data[$j]['Description'];
+    $typeOfHome = $result->data[$j]['Type_of_Home'];
+    $postDate = $result->data[$j]['Post_Date'];
+    
+    $today = date_create(date("Y-m-d"));
+    $date = substr($postDate,0,10);
+    $timeDiff = date_diff(date_create($date),$today);
+    $days = substr($timeDiff->format('%R%a'),1);
+    
+    echo '<div class="row listingRows">';
+    
+        echo '<div id="listImageArea">';
+            echo '<div class="visible-xs visible-sm">';
+                getDaysPostAgo($days);
+            echo '</div>';
+            echo "<img id='listImage' class='img-responsive img-thumbnail' src='$listingImage'/>";
+            echo "<a href='property.php?id=$propId'></a>";
+        echo '</div>';
+
+        echo '<div id="listDetailsArea">';
+                $price = number_format($price);
+                $size = number_format($size);
+                $forRentOrSale;
+                
+                if ($forRent) {
+                    $price = $price . '/mo';
+                    $forRentOrSale = $typeOfHome." For Rent";
+                }
+                else{
+                    $forRentOrSale = $typeOfHome." For Sale";
+                }
+                
+                echo "<p class='visible-xs visible-sm' id='ListingSaleRent'>$forRentOrSale</p>";
+                echo "<p id='ListingPrice'>$$price</p>";
+                echo "<p id='ListingDetailsBdBa'>$beds bd | $baths ba</p>";
+                echo "<p class='hidden-xs hidden-sm' id='ListingDetails'>$typeOfHome</p>";
+                echo "<p id='ListingAddress'>$street $city, $state $zip</p>";
+                if ($petsAllowed == 1) {
+                    echo "<p id='ListingDetails'><span class='glyphicon glyphicon-heart-empty'></span> Pets Allowed</p>";
+                }
+        echo '</div>';
+        
+        echo '<div id="listBulletsArea" class="hidden-xs hidden-sm">';
+            echo "<div class='outer'>";
+                echo "<div class='middle'>";
+                    echo "<div class='inner'>";
+                        if ($forRent) {
+                                echo '<div style="padding-bottom:5px;"><img src="./images/forRent.png"></div>';
+                        }
+                        else{
+                                echo '<div style="padding-bottom:5px;"><img src="./images/forSale.png"></div>';
+                        }
+
+                        if ($petsAllowed) {
+                                echo '<div style="padding-bottom:5px;"><img src="./images/petsAllowed.png"></div>';
+                        }
+                    echo "</div>";
+                echo "</div>";
+            echo "</div>";	 
+        echo '</div>';
+		
+        echo '<div id="listPostDateArea" class="hidden-xs hidden-sm">';
+
+                echo "<div class='outer'>";
+                echo "<div class='middle'>";
+                        echo "<div class='inner'>";
+                        getDaysPostAgo($days);
+                        echo "</div>";
+                echo "</div>";
+        echo "</div>";
+                
+        echo '</div>';
+        
+    echo '</div>';
+    echo $Paginator->createLinks( $links, 'pagination pagination-sm', $lastSearch);
+}
+
+?>
+    
+    

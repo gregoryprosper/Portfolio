@@ -1,0 +1,21 @@
+header {
+	background-image: url("..//images/banner.png");
+	color: rgb(255,255,255);
+	background-repeat:no-repeat;
+	background-repeat: fixed;
+	}
+h1.banner{
+	margin-left: 20px;
+}
+
+h2.banner{
+	margin-left: 20px;
+}
+		
+img.folder{
+	vertical-align: middle;
+	margin-right: 20px;}
+
+p.folderText{
+	font-family:"Estrangelo Edessa";
+	font-size: 30px;}

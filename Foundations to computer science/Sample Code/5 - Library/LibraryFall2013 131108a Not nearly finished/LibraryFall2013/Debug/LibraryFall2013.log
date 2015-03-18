@@ -1,0 +1,12 @@
+﻿  main.cpp
+  Transducer.cpp
+c:\users\millz\dropbox\school\computer science\foundations of cs\sample code\5 - library\libraryfall2013 131108a not nearly finished\libraryfall2013\transducer.cpp(79): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\users\millz\dropbox\school\computer science\foundations of cs\sample code\5 - library\libraryfall2013 131108a not nearly finished\libraryfall2013\transducer.cpp(103): warning C4018: '<' : signed/unsigned mismatch
+  Library.cpp
+c:\users\millz\dropbox\school\computer science\foundations of cs\sample code\5 - library\libraryfall2013 131108a not nearly finished\libraryfall2013\library.cpp(80): warning C4018: '>=' : signed/unsigned mismatch
+c:\users\millz\dropbox\school\computer science\foundations of cs\sample code\5 - library\libraryfall2013 131108a not nearly finished\libraryfall2013\library.cpp(80): warning C4018: '<=' : signed/unsigned mismatch
+c:\users\millz\dropbox\school\computer science\foundations of cs\sample code\5 - library\libraryfall2013 131108a not nearly finished\libraryfall2013\library.cpp(115): warning C4018: '>=' : signed/unsigned mismatch
+c:\users\millz\dropbox\school\computer science\foundations of cs\sample code\5 - library\libraryfall2013 131108a not nearly finished\libraryfall2013\library.cpp(115): warning C4018: '<=' : signed/unsigned mismatch
+c:\users\millz\dropbox\school\computer science\foundations of cs\sample code\5 - library\libraryfall2013 131108a not nearly finished\libraryfall2013\library.cpp(314): warning C4018: '>' : signed/unsigned mismatch
+  Generating Code...
+  LibraryFall2013.vcxproj -> C:\Users\millz\Dropbox\School\Computer Science\Foundations of CS\Sample Code\5 - Library\LibraryFall2013 131108a Not nearly finished\Debug\LibraryFall2013.exe

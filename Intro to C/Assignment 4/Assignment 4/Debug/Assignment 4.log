@@ -1,0 +1,35 @@
+﻿  gprosper_scramble.c
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(53): warning C4013: 'system' undefined; assuming extern returning int
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(62): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(218) : see declaration of 'fopen'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(84): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(237) : see declaration of 'fscanf'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(85): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(237) : see declaration of 'fscanf'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(134): warning C4047: 'function' : 'char' differs in levels of indirection from 'char [20][20]'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(134): warning C4024: 'solvedLetters' : different types for formal and actual parameter 1
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(134): warning C4047: 'function' : 'char' differs in levels of indirection from 'char [1][20]'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(134): warning C4024: 'solvedLetters' : different types for formal and actual parameter 2
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(134): warning C4020: 'solvedLetters' : too many actual parameters
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(149): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(152): warning C4047: 'function' : 'char' differs in levels of indirection from 'char [1][20]'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(152): warning C4024: 'caseChange' : different types for formal and actual parameter 1
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(156): warning C4047: 'function' : 'char' differs in levels of indirection from 'char [1][20]'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(156): warning C4024: 'endGame' : different types for formal and actual parameter 1
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(156): warning C4047: 'function' : 'char' differs in levels of indirection from 'char [20][20]'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(156): warning C4024: 'endGame' : different types for formal and actual parameter 2
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(74): warning C4101: 'numberOfLetters' : unreferenced local variable
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(174): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(185): warning C4028: formal parameter 1 different from declaration
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(196): warning C4028: formal parameter 1 different from declaration
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(196): warning C4028: formal parameter 2 different from declaration
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(224): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(290) : see declaration of 'scanf'
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(242): warning C4028: formal parameter 1 different from declaration
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(242): warning C4028: formal parameter 2 different from declaration
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(242): warning C4029: declared formal parameter list different from definition
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(182): warning C4715: 'playAgain' : not all control paths return a value
+c:\users\millz\documents\visual studio 2012\projects\assignment 4\assignment 4\gprosper_scramble.c(219): warning C4715: 'endGame' : not all control paths return a value
+  Assignment 4.vcxproj -> C:\Users\millz\Documents\Visual Studio 2012\Projects\Assignment 4\Debug\Assignment 4.exe

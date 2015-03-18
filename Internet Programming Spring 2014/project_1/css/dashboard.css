@@ -1,0 +1,38 @@
+#banner {
+	width:100%;
+	heith:172px;
+}
+
+#userPic {
+	width:250px;
+	height:300px;
+	vertical-align:top;
+	padding-right:10px;
+}
+
+#control {
+	float:right;
+	margin-right:100px;
+	margin-top:10px;
+	padding:20px;
+	border-style:solid;
+	border-radius:25px;
+	border-color:#000000;
+}
+
+#content {
+	float:left;
+}
+
+#widgets {
+	float:none;
+}
+
+.glyphicon glyphicon-pencil {
+	size:36px;
+	
+}
+
+header, section, footer, aside, nav, article, figure {
+	display:block;
+}

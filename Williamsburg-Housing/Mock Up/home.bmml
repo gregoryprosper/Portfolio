@@ -1,0 +1,100 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="778" measuredH="780" mockupW="732" mockupH="762">
+  <controls>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="133" y="18" w="450" h="762" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Home%20Page</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Image" x="144" y="198" w="427" h="189" measuredW="77" measuredH="79" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::SearchBox" x="152" y="280" w="413" h="-1" measuredW="120" measuredH="25" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>searchResults%26bm%3BsearchResults.bmml%26bm%3BsearchResults.bmml%26bm%3BsearchResults.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22106%2C262%2C519%2C287%22%20href%3D%22searchResults.bmml%22%20alt%3D%22searchResults%22%20id%3D%229%22/%3E</map>
+        <text>search</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::LinkBar" x="451" y="118" w="-1" h="-1" measuredW="109" measuredH="19" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>signIn%26bm%3BsignIn.bmml%26bm%3BsignIn.bmml%26bm%3BsignIn.bmml%2CsignUp%26bm%3BsignUp.bmml%26bm%3BsignUp.bmml%26bm%3BsignUp.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22405%2C102%2C448%2C115%22%20href%3D%22signIn.bmml%22%20alt%3D%22signIn%22%20id%3D%2211%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22466%2C102%2C514%2C115%22%20href%3D%22signUp.bmml%22%20alt%3D%22signUp%22%20id%3D%2211%22/%3E</map>
+        <text>Sign%20In%2C%20Sign%20Up</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Image" x="144" y="103" w="180" h="49" measuredW="77" measuredH="79" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::VCurly" x="598" y="417" w="180" h="143" measuredW="180" measuredH="140" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Site%27s%20Reasons%20to%20Use</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::VCurly" x="46" y="95" w="79" h="64" measuredW="180" measuredH="140" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>right</direction>
+        <text>Logo</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::TextInput" x="136" y="163" w="443" h="-1" measuredW="456" measuredH="26" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <size>12</size>
+        <text>SFSU/FAU/FuldaSoftware%20Engineering%20Project%2C%20Fall%202014.%20For%20Demonstration%20Only</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Canvas" x="136" y="681" w="445" h="70" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>1</backgroundAlpha>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::VCurly" x="598" y="681" w="180" h="70" measuredW="180" measuredH="140" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Footer</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Image" x="167" y="417" w="-1" h="-1" measuredW="77" measuredH="79" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Image" x="320" y="417" w="-1" h="-1" measuredW="77" measuredH="79" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Image" x="475" y="417" w="-1" h="-1" measuredW="77" measuredH="79" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Paragraph" x="152" y="511" w="109" h="49" measuredW="275" measuredH="80" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>Text%20That%20relates%20to%20Image</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Paragraph" x="304" y="511" w="109" h="49" measuredW="275" measuredH="80" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>Text%20That%20relates%20to%20Image</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Paragraph" x="459" y="511" w="109" h="49" measuredW="275" measuredH="80" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>center</align>
+        <text>Text%20That%20relates%20to%20Image</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

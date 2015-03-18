@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Fast & Cheap Dealers</title>
+<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<link rel="stylesheet" type="type/css" href="css/main.css"/>
+</head>
+
+<body>
+<div id="wrapper">
+<div id="banner">
+	<img src="images/banner.png" width="1000px" height="150px"/>
+</div>
+<div id="header">
+<h2> Order Form </h2>
+</div>
+<form action="confirmation.php" method="post" onsubmit="return validate(this)">
+<div id="name">
+<span id="first_Name">
+First Name: 
+<input type ="text" id="name" name="firstName"/>
+</span>
+&nbsp;
+<span id="last_Name">
+Last Name: 
+<input type ="text" id="name" name="lastName"/>
+</span>
+</div>
+
+<div id="email">
+Email: <input type ="text" id="name" name="email" size="35"/>
+</div>
+
+<div id="make_Div">
+<select id="make" name="carMake" >
+<option value="">&mdash; choose a Make &mdash;</option>
+<option value="Toyota">Toyota</option>
+<option value="Honda">Honda</option>
+<option value="Nissan">Nissan</option>
+<option value="Volvo">Volvo</option>
+</select>
+</div>
+
+<div id="model_Div">
+<select id="model" name="carModel" disabled="true">
+</select>
+</div>
+
+<div id="color_Div">
+<select id="color" name="carColor" disabled="true">
+</select>
+</div>
+
+<div id="options_Div">
+</div>
+
+<div id="submit_Div">
+<input type="submit" id="submit" name="submit" value="submit" style="display:none"/>
+</div>
+</form>
+</div>
+</body>
+</html>

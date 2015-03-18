@@ -1,0 +1,815 @@
+/* Layout */ 
+
+html, body{
+    height: 100%;
+}
+
+.wrapper{
+    min-height: 100%;
+    margin: 0 auto -100px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.footer, .push{
+    height: 100px;
+}
+
+.container{
+    max-width: 100%;
+}
+
+#homePageJumbotron{
+    padding-top: 150px;
+    height: 500px;
+    background: url("../images/living_room.jpg") no-repeat center center;
+    background-size: 100%,500px;
+}
+
+#myCarousel img{
+    width: 100%;
+    height: 405px;
+}
+
+#searchBar{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+#searchArea{
+    color: white;
+    padding: 20px;
+    border-radius: 25px;
+    background-color:rgba(0,0,0,0.5);
+}
+
+#logo{
+    max-height: 50px;
+}
+
+#logo2{
+    max-height: 30px;
+    display:inline;
+    vertical-align:bottom;
+}
+
+.icon{
+    height: 40px;
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.iconRow{
+    margin-bottom: 50px;
+    font-size: large;
+}
+
+#demoTag{
+    text-align: center;
+}
+
+.footer {
+	height: 100px; /* .push must be the same height as .footer */
+        background-color: black;
+        color: white;
+        
+}
+
+#footerList{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#footerList li{
+    padding-left: 25px;
+    padding-right: 25px;
+    display: inline;
+}
+
+#footerContent{
+    text-align: center;
+    padding-top: 40px;
+}
+
+#ListingPrice{
+    font-size:x-large;
+    font-weight: bold;
+    color: #009900;
+}
+    
+#ListingAddress{
+    font-size:large;
+    color: #1780FF;
+}
+
+#ListingDetailsBdBa{
+    font-size:larger;
+    font-weight: bold;
+}
+
+#ListingSaleRent{
+    font-size:large;
+}
+    
+#ListingDetails{
+    font-size:medium;
+}
+    
+#listImage{
+    height: 200px;
+    width: 266px;
+}
+
+#listImageArea{
+    width: 250px;
+    height: 188px;
+    margin-right: 10px;
+    float: left;
+}
+
+#listDetailsArea{
+    height: 188px;
+    width: 300px;
+    margin-left: 10px;
+    float: left;
+}
+
+#listDetailsArea p{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#listBulletsArea{
+    height: 188px;
+    width: 130px;
+    float: left;
+    margin-left: 25px;
+}
+
+#ListingEditButtons{
+    margin-left: 10%;
+    float: left;
+}
+
+#listPostDateArea{
+    height: 188px;
+    float: left;
+    margin-left: 50px;
+	
+}
+
+.postDateNew{
+	font-size: large;
+	color: #009900;
+}
+
+.postDate{
+	font-size: large;
+}
+
+.listingRows{
+    border-top-style: outset;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.UserlistingRows{
+    border-top-style: outset;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.listingRows:hover{
+    background: #e8e8e8;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+#mainRowContent{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#reasonsToUseImageHeader{
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.outer{
+    display: table;
+    position: absolute;
+    height: 188px;
+    width: 150px;
+}
+
+.middle{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.required::after{
+    content:"*";
+}
+
+label.error{
+    color: #F00;
+    font-weight: bold;
+}
+
+input.error, select.error, textarea.error{
+    border: 1px red solid;
+}
+
+#filter{
+    background-color: #ebebeb;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 60px;
+    width: 100%;
+}
+
+.form-inline{
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-inline > select{
+    float: left;
+}
+
+.form-inline > button, .form-inline > a{
+    float: right;
+}
+
+select{
+    margin-right: 10px;
+}
+
+#profilePic{
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+#coverPic{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+#submitChangesButton{
+    text-align: center;
+}
+
+.changeForm{
+    margin-bottom: 75px;
+}
+
+#map{ 
+    width:100%; 
+    height:400px; 
+    margin-top: 20px;
+} 
+
+#realtorPic{
+    width: 175px;
+    height: 175px; 
+}
+
+.textXXLarge{
+    font-size: x-large;
+}
+
+.textXLarge{
+    font-size: x-large;
+}
+
+.textLarge{
+    font-size: large;
+}
+
+.textSmall{
+    font-size: small;
+}
+
+#postHeader p{
+    display: inline;
+    font-size: medium;
+}
+
+.petIcon{
+    width: 20px;
+    height: 20px;
+}
+
+@media (min-width: 533px) and (max-width: 630px){ 
+    
+    #homePageJumbotron{
+        padding-top: 70px;
+        height: 300px;
+    }
+    
+    #mainRowContent{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    #myCarousel img{
+        width: 100%;
+        height: 360px;
+    }
+    
+    #searchArea{
+        padding-top: 5px;
+    }
+    
+    #searchBar{
+        width: 100%;
+    }
+    
+    #demoTag{
+        font-size: small;
+    }
+    
+    #footerList li{
+        display: block;
+    }
+    
+    #footerContent{
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    .TextTooBigForMobile{
+        font-size:x-large ;
+        font-weight: bold;
+    }
+    
+    #logo{
+        margin-left: 0.1px;
+        max-height: 30px;
+    }
+    
+    #ListingPrice{
+        font-size:large;
+        font-weight: bold;
+    }
+    
+    #ListingAddress{
+        font-size:small;
+    }
+    
+    #ListingDetailsBdBa{
+        font-size:x-large;
+        font-weight: bold;
+    }
+    
+    #ListingSaleRent{
+        font-size:medium;
+    }
+    
+    #ListingDetails{
+        font-size:small;
+    }
+
+    #listImage{
+        height: 173px;
+        width: 230px;
+    }
+    
+    #listImageArea{
+        width: auto;
+        height: auto;
+        float: left;
+        margin-left: 5px;
+        margin-right: 15px;
+    }
+
+    #listDetailsArea{
+        height: auto;
+        width:218px;
+        float: left;
+        margin-right: 0;
+    }
+    
+    .postDateNew{
+        margin-bottom: 5px;
+	font-size: small;
+	color: #009900;
+}
+
+    .postDate{
+        margin-bottom: 5px;
+	font-size: small;
+    }
+    
+    .listingRows{
+        border-top-style: outset;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .UserlistingRows{
+        border-top-style: outset;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    
+    #profilePic{
+        margin-bottom: 10px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    #changeAccountForm{
+        margin-bottom: 75px;
+    }
+    
+    .listingRows:hover{
+        background: none;
+        box-shadow: none;
+    }
+    
+    .textXXLarge{
+        font-size: x-large;
+    }
+
+    .textXLarge{
+        font-size: large;
+    }
+
+    .textLarge{
+        font-size: medium;
+    }
+    
+    #realtorPic{
+        width: 150px;
+        height: 150px; 
+    }
+}
+
+@media (max-width: 532px){
+    #myCarousel img{
+        width: 100%;
+        height: 264px;
+    }
+
+    #listImage{
+        height: 156px;
+        width: 156px;
+    }   
+    
+    #ListingPrice{
+        font-size:medium;
+        font-weight: bold;
+    }
+    
+    #ListingAddress{
+        font-size:xx-small;
+    }
+    
+    #ListingDetailsBdBa{
+        font-size:large;
+        font-weight: bold;
+    }
+    
+    #ListingSaleRent{
+        font-size:small;
+    }
+    
+    #ListingDetails{
+        font-size:xx-small;
+    }
+    
+    #listImageArea{
+        width: auto;
+        height: auto;
+        float: left;
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    #listDetailsArea{
+        height: auto;
+        width:171px;
+        float: left;
+        margin-right: 0;
+    }
+    
+    .postDateNew{
+        margin-bottom: 5px;
+	font-size: small;
+	color: #009900;
+}
+
+    .postDate{
+        margin-bottom: 5px;
+	font-size: small;
+    }
+    
+    .listingRows{
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 20px;
+        border-top-style: outset;
+        margin-bottom: 0px;
+    }
+    
+    .UserlistingRows{
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 20px;
+        border-top-style: outset;
+        margin-bottom: 0px;
+    }
+    
+    #homePageJumbotron{
+        padding-top: 40px;
+        height: 200px;
+    }
+    
+    #searchArea{
+        padding-top: 5px;
+    }
+    
+    #searchBar{
+        width: 100%;
+    }
+    
+    #demoTag{
+        font-size: small;
+    }
+    
+    #footerList li{
+        display: block;
+    }
+    
+    #footerContent{
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    .TextTooBigForMobile{
+        font-size:x-large ;
+        font-weight: bold;
+    }
+    
+    #profilePic{
+        width: 200px;
+        height: 200px;
+    }
+    
+    #changeAccountForm{
+        margin-bottom: 75px;
+    }
+    
+    .listingRows:hover{
+        background: none;
+        box-shadow: none;
+    }
+    
+    #mainRowContent{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    #map{ 
+    width:100%; 
+    height:200px; 
+    margin-top: 0px;
+
+    } 
+    
+    #realtorPic{
+        width: 100px;
+        height: 100px; 
+    }
+    
+    .textXXLarge{
+        font-size: large;
+    }
+
+    .textXLarge{
+        font-size: medium;
+    }
+
+    .textLarge{
+        font-size: small;
+    }
+    
+    .textSmall{
+        font-size: x-small;
+    }
+    
+}
+
+@media (max-width: 375px){ 
+   
+    #homePageJumbotron{
+        padding-top: 40px;
+        height: 200px;
+    }
+    
+    #myCarousel img{
+        width: 100%;
+        height: 203px;
+    }
+    
+    #searchArea{
+        padding-top: 5px;
+    }
+    
+    #searchBar{
+        width: 100%;
+    }
+    
+    #demoTag{
+        font-size: xx-small;
+    }
+    
+    #footerList li{
+        display: block;
+    }
+    
+    #footerContent{
+        text-align: center;
+        padding-top: 20px;
+    }
+    
+    .TextTooBigForMobile{
+        font-size:large ;
+        font-weight: bold;
+    }
+    
+    #logo{
+        margin-left: 0.1px;
+        max-height: 30px;
+    }
+    
+    #ListingPrice{
+        font-size:medium;
+        font-weight: bold;
+    }
+    
+    #ListingAddress{
+        font-size:xx-small;
+    }
+    
+    #ListingDetailsBdBa{
+        font-size:large;
+        font-weight: bold;
+    }
+    
+    #ListingSaleRent{
+        font-size:small;
+    }
+    
+    #ListingDetails{
+        font-size:xx-small;
+    }
+
+    #listImage{
+        height: 125px;
+        width: 125px;
+    }
+    
+    #listImageArea{
+        width: auto;
+        height: auto;
+        float: left;
+        margin-left: 5px;
+        margin-right: 10px;
+    }
+
+    #listDetailsArea{
+        height: auto;
+        width:168px;
+        float: left;
+        margin-right: 0;
+    }
+    
+    .listingRows{
+        border-top-style: outset;
+        margin-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .UserlistingRows{
+        border-top-style: outset;
+        margin-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    #profilePic{
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px
+    }
+    
+    #changeAccountForm{
+        margin-bottom: 75px;
+    }
+    
+    #postHeader p{
+        font-size: small;
+    }
+    
+    #realtorPic{
+        width: 100px;
+        height: 100px; 
+    }
+    
+    .textXXLarge{
+        font-size: small;
+    }
+
+    .textXLarge{
+        font-size: small;
+    }
+
+    .textLarge{
+        font-size: smaller;
+    }
+
+}
+
+@media (max-width: 320px){
+    #homePageJumbotron{
+        padding: 10px;
+        height: 150px;
+    }
+    #listImage{
+        width: 100px;
+        height: 100px;
+    }
+    
+    #listDetailsArea{
+        margin-left: 0px;
+        width: 168px;
+    }
+    
+    .listingRows{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .UserlistingRows{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .TextTooBigForMobile{
+        font-size: medium;
+    }
+    
+    .textXXLarge{
+        font-size: smaller;
+    }
+
+    .textXLarge{
+        font-size: smaller;
+    }
+
+    .textLarge{
+        font-size: smaller;
+    }
+    
+    #realtorPic{
+        width: 75px;
+        height: 75px; 
+    }
+}
+
+@media (max-width: 240px){
+    
+    #listDetailsArea{
+        margin-left: 0px;
+        width: 110px;
+    }
+    
+    #realtorPic{
+        width: 50px;
+        height: 50px; 
+    }
+    
+}

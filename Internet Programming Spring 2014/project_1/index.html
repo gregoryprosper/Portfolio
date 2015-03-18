@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/dashboard.css" rel="stylesheet"/>
+<title>Dashboard</title>
+</head>
+
+<body>
+<div id="page">
+<header>
+<img src="images/placeholderBanner.png" id="banner"/>
+</header>
+
+<div id="content">
+<article>
+<h2><img src="images/pMale.png" id="userPic"/>
+Hello, <i id="name">No Name</i></h2>
+</article>
+<br />
+<h1> Widgets </h1>
+<br />
+<article id="widgets">
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+<li class="active"><a href="#youtube" data-toggle="tab">Youtube</a></li>
+<li><a href="#mario" data-toggle="tab">Super Mario</a></li>
+<li><a href="#clock" data-toggle="tab">Clock</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+<div class="tab-pane active" id="youtube">
+<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100080069921643878012/youtube.xml&amp;synd=open&amp;w=500&amp;h=350&amp;title=YouTube&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+</div>
+<div class="tab-pane" id="mario">
+<script src="//www.gmodules.com/ig/ifr?url=http://my-igadgets.googlecode.com/files/supermarioworld2.xml&amp;synd=open&amp;w=350&amp;h=500&amp;title=__MSG_title__&amp;lang=en&amp;country=ALL&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+</div>
+<div class="tab-pane" id="clock">
+<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/102529245987050581532/Time-Date.xml&amp;synd=open&amp;w=468&amp;h=260&amp;title=Time+and+Date&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+</div>
+</div>
+
+</article>
+</div>
+
+<aside id="control">
+<section>
+<h1 class="glyphicon glyphicon-pencil"> </h1>
+<p>What's your name:</p>
+<input type="text" name="userName" id="formUserName"/>
+
+<br />
+
+<p>What's your gender:</p>
+<select name ="" id="genderPicker">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+
+<br />
+
+<p>What's your favorite color: </p>
+<select name ="" id="colorPicker">
+<option value="#ffffff">White</option>
+<option value="#2997EE">Blue</option>
+<option value="#94CE41">Green</option>
+<option value="#FF0000">Red</option>
+<option value="#828282">Grey</option>
+</select>
+
+<br />
+
+<p>Choose your theme:</p>
+<select name ="" id="themePicker">
+<option value="">No Theme</option>
+<option value="theme_1">Red Theme</option>
+<option value="theme_2">Blue Theme</option>
+<option value="theme_3">Grey Theme</option>
+<option value="theme_4">Green Theme</option>
+</select>
+</section>
+</aside>
+</div>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/form.js"></script>
+
+</body>
+</html>
