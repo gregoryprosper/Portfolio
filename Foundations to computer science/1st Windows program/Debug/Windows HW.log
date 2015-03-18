@@ -1,5 +1,0 @@
-﻿  main.cpp
-c:\users\millz\dropbox\school\computer science\cs programs\windows hw\main.cpp(23): warning C4244: 'initializing' : conversion from 'double' to 'LONG', possible loss of data
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-  LINK : C:\Users\millz\Dropbox\School\Computer Science\CS Programs\Windows HW\Debug\Windows HW.exe not found or not built by the last incremental link; performing full link
-  Windows HW.vcxproj -> C:\Users\millz\Dropbox\School\Computer Science\CS Programs\Windows HW\Debug\Windows HW.exe
