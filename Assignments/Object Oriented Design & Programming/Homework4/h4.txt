@@ -1,0 +1,215 @@
+COP4331/COP5339 Homework 4
+
+Chapter 5 and Chapter 6
+
+*** no homeworks will be accepted after the due date ***
+
+Preparation/Delivery Instructions:
+
+
+   1. Write all your answers, in the order given in the homework file, in ONE PDF file 
+      (or Word 97, with extension .doc). 
+      
+      Follow this format:
+      Write your name followed by the section number (e.g. COP5339 003).
+      For each problem write as a heading the problem number (e.g. "4.1"). 
+      The problem number must be clearly readable before the problem solution. 
+      Java source files must be properly identified: write the file name as a heading, 
+      followed by the file content.
+      Make sure Java code and UML diagrams are readable. Make it easy for the grader.
+      Nice color syntax highlighting is not required, but appreciated. 
+      Proper indentation and code formatting is required.
+      
+   2. Do *not* submit other files. Upload only the pdf/.doc file with all solutions.
+   
+   3. For full credit, your designs and code must follow the course guidelines and must compile without 
+		warnings and work correctly, as required in the problem description. 
+
+		Remider: it is academic misconduct to submit work that is not yours.
+		Do not paste code taken from the web. Only code part of the solution will be graded.
+		You can (and should) use any helpful code from the textbook for your answers.
+
+----------------
+Other general advice that will help you do well in this class. And build better code, too.
+
+    * !! Ask your instructor if you have any questions about the homework 
+	(and anything else related to the class) !!
+
+    * Consult the solutions for selected textbook problems, available at 
+		http://www.horstmann.com/oodp2/solutions/solutions.html
+
+    * Do exactly what the problem asks you to do. There is no extra credit for unnecessary work.
+      Points are deducted if design or implemenation requirements are not met.
+
+    * Do not rename classes and methods if they are given.
+
+    * Do not change method signature, where specified. 
+
+    * Design/code your classes for general use. Assume there are other programmers who will use your code.
+
+    * Avoid unnecessary side effects. Do not use static fields/methods, unless warranted (e.g. main()).
+
+    * check for errors and exceptions.
+
+    * Enclose methods that may throw exceptions within a try-catch block.
+    
+    * Check parameters and variables before you do something in a method. E.g. average = sum/list.size() 
+		may throw an ArithmeticException if the list is empty. 
+
+
+    * Use class (static) variables only when necessary (e.g. to share a variable between instances, 
+		or for constants)
+
+    * Do not define instance variables when local variables could do the job.
+
+    * Use nouns for class names and verbs for methods.
+
+    * Follow coding conventions; class names start with capitals, methods and variables start with lowercase, etc. 
+
+
+Scoring: non-optional problems total = 100 points
+==============================================================================================================
+
+Homework problems (Chapter 5):
+
+5.1.
+Answer these questions:
+
+a) What is the purpose of a design pattern ?
+
+b) When do you apply the Observer pattern ?
+
+c) You review a design written by somebody else for an application
+and you find these:
+
+  - an interface Shape with a method draw()
+  - a class Circle that implements Shape
+  - a class Rectangle that implements Shape
+  - a class CompoundShape that:
+       o  implements interface Shape
+       o  aggregates 0 or more Shape objects, 
+       o  has an extra method called add(Shape sh)
+       o  for implementing method draw() calls the draw() method for all
+          aggregated Shape objects.
+    You assume that a CompoundShape object is made of multiple shapes.
+What design pattern is at work in this application? Explain your answer.
+
+d) The TitledBorder class can give a title to a border. Consider the code
+
+    panel.setBorder(new TitledBorder(new EtchedBorder(), "Enter Option"));
+
+What design patterns are at work  and how ?  (a similar example is in the textbook/notes)
+
+
+5.2.
+Suppose you have to design a text editor class (TextEditor) that should 
+benefit from  multiple variants of a spell cheking algorithm. Users of the 
+TextEditor class would have to supply custom versions of the spell cheking 
+algorithm to support spelling in different languages. 
+
+a) What design pattern would you use and why ?
+
+b) Write the UML class diagram for the design pattern as it applies to this problem.
+
+c) Write a table that lists the relationship between the names from the 
+identified design pattern and the classes/interfaces from your problem.
+
+d) REQUIRED FOR 5339 students and EXTRA CREDIT FOR COP4331 STUDENTS (5 points):
+Write (skeleton) Java code for the design. 
+
+
+
+5.3.
+Write a program that displays editable bar graphs. The GUI has two vertical panels. 
+The left panel contains textfields with numbers. The right panel contains corresponding 
+horizontal bar graphs that graphically show the value of the numbers on the left. Use a rectangle 
+with the width equal to the numbers from the textfield. 
+
+A screenshot is available at http://wisenet.fau.edu/class/cop4331/barcharts-screenshot.png
+
+Use MVC and the Observer pattern. Store the numbers in the model. Attach the graph view as a 
+listener. When the user edits one of the numbers, the number controller should update the model
+and the model should notify the graph view that a changes has occured. Then, the graph 
+should get the number from the model and repaint itself.
+
+Hints: use method Textfield.getText() to extract the text from a textfield. 
+Add a key listener to each textfield with method 
+Textfield.addKeyListener(KeyListener l)
+Interface KeyListener is documented at http://java.sun.com/j2se/1.4.2/docs/api/java/awt/event/KeyListener.html
+Class Textfield is documented at http://java.sun.com/j2se/1.5.0/docs/api/java/awt/TextField.html
+
+
+
+EXTRA CREDIT PROBLEM (5.4) for ALL STUDENTS (5 points)
+5.4 
+Write a program that displays a disk and three sliders. A JSlider object is a component that 
+lets the user graphically select a value by sliding a knob within a bounded interval.
+Each slider in the GUI is labeled with a color name in a JLabel object: red, green, and blue. 
+Each slider varies between min=0 and max=255. Together, the three sliders provide the RGB numbers
+necessary to create a Color object.
+When the user changes a slider, the disk's RGB color must change accordingly.
+
+Use the MVC architecture and the Observer pattern.
+Register with each slider a ChangeListener object (Controller). 
+When the user moves a slider, the ChangeListener object notifies the model of the change.
+The model gets the updated numbers from the 3 sliders and notifies the view.
+The view object can be a JComponent subclass that displays the disk in function paintComponent().
+
+JSlider doc:
+http://java.sun.com/j2se/1.5.0/docs/api/javax/swing/JSlider.html
+
+Color doc:
+http://java.sun.com/j2se/1.5.0/docs/api/java/awt/Color.html
+
+----------------------------------
+
+Chapter 6
+
+6.1. Answer these questions:
+a) Explain the purpose of abstract classes in no more than 15 lines.
+
+b) Give an example for a situation when an abstract class cannot be used 
+in a Java program and an interface is the only choice.
+
+c) GeneralPath collects shapes and is itself a shape. What design pattern does
+it implement ? Explain.
+
+
+6.2.
+Consider the Employee class hierarchy from the beginning of Chapter 6.
+Use the Template Method design pattern to implement a Template Method 
+for the Employee class:
+      String toString() {...}
+that generates a string with employee's name, base salary (the salary field),
+and the total salary (as returned by getSalary()).
+
+Describe the mappings from the pattern context to the Employee problem domain.
+Show the UML class diagram.The diagram needs to describe relationships between 
+the base class Employee and for one subclass, Manager.
+attributes, and methods involved in implementing toString().
+Write the Java code for classes Employee and Manager. 
+
+
+6.3.
+Change the SceneEditor application from directory code/Ch6/scene3
+such that a SceneShape object in selected state is drawn with a dashed blue rectangle
+around it, with small black squares (side size=6 pixels) marking the corners.
+A screenshot is available at http://wisenet.fau.edu/class/cop4331/SelectableShape-selected.png
+
+Hints:
+You may use method GeneralPath.getBounds2D() to get the enclosing rectangle.
+Use method Graphics2D.setStroke(Stroke s) with a BasicStroke parameter.
+
+
+
+---
+EXTRA CREDIT PROBLEM 6.4 for ALL STUDENTS: 10 points
+You get these points if the problem is implemented and works correctly -- no partial credit.
+
+6.4.
+Take your solution to Problem 6.3 and add support for resizing SceneShape objects.
+The user should be able to click on one of the selected object's corners
+and drag it while the opposite corner is fixed, thus resizing the SceneShape.
+Use design patterns and explain with comments in your code what patterns are used and how.
+
+
