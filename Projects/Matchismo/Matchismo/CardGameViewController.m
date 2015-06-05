@@ -45,28 +45,33 @@
     self.durationTracker++;
     NSLog(@"%d",self.durationTracker);
 }
-//
-//-(void)updateUI{
-//    for (PlayingCardView *cardView in self.cardViews) {
-//        int cardIndex = (int)[self.cardViews indexOfObject:cardView];
-//        Card *card = [self.game cardAtIndex:cardIndex];
-//        cardView.suit = @"♥️";
-//        cardView.rank = 13;
-//        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
-//        [self updateLogLabel];
-//    }
-//    
-//}
+
 
 -(void)updateUI{
-    for (UIButton *cardView in self.cardButtons) {
-        int cardIndex = (int)[self.cardButtons indexOfObject:cardView];
-        Card *card = [self.game cardAtIndex:cardIndex];
-        [cardView setAttributedTitle:[self titleForCard:card] forState:UIControlStateNormal];
-        [cardView setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
-        [self updateLogLabel];
+    
+    if ([self isKindOfClass:[SetCardGameViewController class]]) {
+        
+        for (UIButton *cardView in self.cardButtons) {
+            int cardIndex = (int)[self.cardButtons indexOfObject:cardView];
+            Card *card = [self.game cardAtIndex:cardIndex];
+            [cardView setAttributedTitle:[self titleForCard:card] forState:UIControlStateNormal];
+            [cardView setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
+            [self updateLogLabel];
+        }
     }
+    else{
+        
+        for (PlayingCardView *cardView in self.cardViews) {
+            int cardIndex = (int)[self.cardViews indexOfObject:cardView];
+            Card *card = [self.game cardAtIndex:cardIndex];
+            cardView.suit = @"♥️";
+            cardView.rank = 13;
+            self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
+            [self updateLogLabel];
+        }
+    }
+         
     
 }
 
