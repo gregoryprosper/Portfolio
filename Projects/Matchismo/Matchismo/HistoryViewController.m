@@ -18,13 +18,13 @@
 -(void)viewDidLoad{
     
     if ([self.viewPerformingSegue  isEqual: @"Playing"]) {
-        for (int i = self.history.count - 1; i >= 0; i--) {
+        for (int i = (int) self.history.count - 1; i >= 0; i--) {
          self.historyTextField.text = [self.historyTextField.text stringByAppendingString:[NSString stringWithFormat:@"%@\n\n",self.history[i]]];
         }
     }else if ([self.viewPerformingSegue isEqual: @"Set"]){
         NSMutableAttributedString *holder = [[NSMutableAttributedString alloc]init];
         
-        for (int i = self.history.count - 1; i >= 0; i--) {
+        for (int i = (int) self.history.count - 1; i >= 0; i--) {
             [holder appendAttributedString:self.history[i]];
             [holder appendAttributedString:[[NSAttributedString alloc]initWithString:@"\n\n"]];
             self.historyTextField.attributedText = holder;

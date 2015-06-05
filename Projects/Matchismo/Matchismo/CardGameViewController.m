@@ -36,7 +36,7 @@
     [self.timer invalidate];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     self.logLabel.text = @"";
-    int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
+    int chosenButtonIndex = (int)[self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
 }
@@ -45,18 +45,31 @@
     self.durationTracker++;
     NSLog(@"%d",self.durationTracker);
 }
+//
+//-(void)updateUI{
+//    for (PlayingCardView *cardView in self.cardViews) {
+//        int cardIndex = (int)[self.cardViews indexOfObject:cardView];
+//        Card *card = [self.game cardAtIndex:cardIndex];
+//        cardView.suit = @"♥️";
+//        cardView.rank = 13;
+//        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
+//        [self updateLogLabel];
+//    }
+//    
+//}
 
 -(void)updateUI{
-    for (PlayingCardView *cardView in self.cardViews) {
-        int cardIndex = [self.cardViews indexOfObject:cardView];
+    for (UIButton *cardView in self.cardButtons) {
+        int cardIndex = (int)[self.cardButtons indexOfObject:cardView];
         Card *card = [self.game cardAtIndex:cardIndex];
-        cardView.suit = @"♥️";
-        cardView.rank = 13;
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
+        [cardView setAttributedTitle:[self titleForCard:card] forState:UIControlStateNormal];
+        [cardView setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
         [self updateLogLabel];
     }
     
 }
+
 
 -(NSString*)convertToSymbols:(NSInteger)number :(NSInteger)symbol{
     NSString *title = [[NSString alloc]init];
@@ -202,6 +215,10 @@
     else return [[NSAttributedString alloc] initWithString:@""];
 }
 
+-(UIImage*)backgroundImageForCard:(Card *)card{
+    return nil;
+}
+
 -(CardMatchingGame*)game{
     if (!_game) {
         _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
@@ -241,7 +258,7 @@
 }
 
 -(NSUInteger)getIndexOfNewScore:(NSMutableArray*)currentArray :(NSString*)element{
-    for (int i = currentArray.count - 1; i >= 0; i--){
+    for (int i = (int) currentArray.count - 1; i >= 0; i--){
         if ([element intValue] < [currentArray[i] intValue]) {
             return i+1;
         }
@@ -261,7 +278,7 @@
             
             if ([self isKindOfClass:[PlayingCardGameViewController class]]){
                 
-                NSString *score = [NSString stringWithFormat:@"%d",self.game.score];
+                NSString *score = [NSString stringWithFormat:@"%lu",(unsigned long)self.game.score];
                 NSString *game = @"Match";
                 NSString *date = [[[NSDate date] description]substringWithRange:NSMakeRange(5, 6)];
                 NSString *duration = [[NSString stringWithFormat:@"%d",self.durationTracker] stringByAppendingString:@" secs"];
@@ -283,7 +300,7 @@
             }
             else if ([self isKindOfClass:[SetCardGameViewController class]]){
                 
-                NSString *score = [NSString stringWithFormat:@"%d",self.game.score];
+                NSString *score = [NSString stringWithFormat:@"%lu",(unsigned long)self.game.score];
                 NSString *game = @"Set";
                 NSString *date = [[[NSDate date] description]substringWithRange:NSMakeRange(5, 6)];
                 NSString *duration = [[NSString stringWithFormat:@"%d",self.durationTracker] stringByAppendingString:@" secs"];
@@ -304,11 +321,11 @@
                 [[NSUserDefaults standardUserDefaults] setObject:mutableDurationArray forKey:@"durationArray"];
             }
         }
-        else if (self.game.score > [[scoreArray lastObject] intValue] && ![scoreArray containsObject:[NSString stringWithFormat:@"%d",self.game.score]]){ //Array has more than one Score
+        else if (self.game.score > [[scoreArray lastObject] intValue] && ![scoreArray containsObject:[NSString stringWithFormat:@"%lu",(unsigned long)self.game.score]]){ //Array has more than one Score
             
             if ([self isKindOfClass:[PlayingCardGameViewController class]]){
                 
-                NSString *score = [NSString stringWithFormat:@"%d",self.game.score];
+                NSString *score = [NSString stringWithFormat:@"%lu",(unsigned long)self.game.score];
                 NSString *game = @"Match";
                 NSString *date = [[[NSDate date] description]substringWithRange:NSMakeRange(5, 6)];
                 NSString *duration = [[NSString stringWithFormat:@"%d",self.durationTracker] stringByAppendingString:@" secs"];
@@ -337,7 +354,7 @@
             }
             else if ([self isKindOfClass:[SetCardGameViewController class]]){
                 
-                NSString *score = [NSString stringWithFormat:@"%d",self.game.score];
+                NSString *score = [NSString stringWithFormat:@"%lu",(unsigned long)self.game.score];
                 NSString *game = @"Set";
                 NSString *date = [[[NSDate date] description]substringWithRange:NSMakeRange(5, 6)];
                 NSString *duration = [[NSString stringWithFormat:@"%d",self.durationTracker] stringByAppendingString:@" secs"];
@@ -369,7 +386,7 @@
     else{//Arrays are Empty
         if (self.game.score != 0){
             if ([self isKindOfClass:[PlayingCardGameViewController class]]){
-                NSString *score = [NSString stringWithFormat:@"%d",self.game.score];
+                NSString *score = [NSString stringWithFormat:@"%lu",(unsigned long)self.game.score];
                 NSString *game = @"Match";
                 NSString *date = [[[NSDate date] description]substringWithRange:NSMakeRange(5, 6)];
                 NSString *duration = [[NSString stringWithFormat:@"%d",self.durationTracker] stringByAppendingString:@" secs"];
@@ -384,7 +401,7 @@
                 [[NSUserDefaults standardUserDefaults] setObject:durationArray forKey:@"durationArray"];
             }
             else if ([self isKindOfClass:[SetCardGameViewController class]]){
-                NSString *score = [NSString stringWithFormat:@"%d",self.game.score];
+                NSString *score = [NSString stringWithFormat:@"%lu",(unsigned long)self.game.score];
                 NSString *game = @"Set";
                 NSString *date = [[[NSDate date] description]substringWithRange:NSMakeRange(5, 6)];
                 NSString *duration = [NSString stringWithFormat:@"%d",self.durationTracker];

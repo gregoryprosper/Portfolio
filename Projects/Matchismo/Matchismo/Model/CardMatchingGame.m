@@ -88,17 +88,17 @@ static const int COST_TO_CHOOSE = 1;
                 if (matchScore) {
                     self.score += matchScore * MATCH_BONUS;
                     card.cardLog = [card.cardLog stringByAppendingString:[NSString stringWithFormat:@"%d points!",matchScore * MATCH_BONUS]];
-                    card.Matched = YES;
+                    card.matched = YES;
                     
                     for (Card *otherCard in cardsToBeCompared) {
-                        otherCard.Matched = YES;
+                        otherCard.matched = YES;
                     }
                 }
                 else{
                     
                     if (self.score > 0) {
                         self.score -= MISMATCH_PENALTY;
-                        int scoreSignChangeMoniter = self.score;
+                        int scoreSignChangeMoniter = (int) self.score;
                         if (scoreSignChangeMoniter < 0) {
                             self.score = 0;
                         }
