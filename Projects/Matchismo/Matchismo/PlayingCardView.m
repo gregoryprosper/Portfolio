@@ -29,7 +29,7 @@
 
 #pragma mark - Drawing
 
-#define CORNER_FONT_STANDARD_HEIGHT 180.0
+#define CORNER_FONT_STANDARD_HEIGHT 130.0
 #define CORNER_RADIUS 12.0
 
 -(CGFloat)cornerScaleFactor {
