@@ -48,19 +48,39 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     
-    // Drawing code
-    UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:[self cornerRadius]];
+    if (_faceUp) {
+        // Drawing code
+        UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:[self cornerRadius]];
+        
+        [roundedRect addClip];
+        
+        [[UIColor whiteColor]setFill];
+        
+        UIRectFill(self.bounds);
+        
+        [[UIColor blackColor]setStroke];
+        [roundedRect stroke];
+        
+        [self drawCorners];
+    }
+    else{
+        // Drawing code
+        UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:[self cornerRadius]];
+        
+        [roundedRect addClip];
+        
+        [[UIColor whiteColor]setFill];
+        
+        UIRectFill(self.bounds);
+        
+        [[UIColor blackColor]setStroke];
+        [roundedRect stroke];
+        
+        UIImage *brushImage = [UIImage imageNamed:@"cardBack@1x"];
+        [brushImage drawInRect:roundedRect.bounds];
+    }
     
-    [roundedRect addClip];
     
-    [[UIColor whiteColor]setFill];
-    
-    UIRectFill(self.bounds);
-    
-    [[UIColor blackColor]setStroke];
-    [roundedRect stroke];
-    
-    [self drawCorners];
 }
 
 -(NSString*)rankAsString{
@@ -83,6 +103,7 @@
     [cornerText drawInRect:textBounds];
     
 }
+
 
 #pragma mark - Initialization
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayingCardView : UIView
+@interface PlayingCardView : UIControl
 
 @property (nonatomic) NSUInteger rank;
 @property (nonatomic,strong) NSString *suit;

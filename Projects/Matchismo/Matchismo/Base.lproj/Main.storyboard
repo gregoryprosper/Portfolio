@@ -37,6 +37,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rulesForSet" translatesAutoresizingMaskIntoConstraints="NO" id="d01-rd-pEj">
+                                <rect key="frame" x="0.0" y="63" width="320" height="457"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="sIt-aU-f7T">
                                 <rect key="frame" x="0.0" y="63" width="320" height="457"/>
                             </imageView>
@@ -283,9 +286,6 @@
                                     <action selector="reDeal:" destination="5Lc-vf-5Kh" eventType="touchUpInside" id="FvM-7t-TGo"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rulesForSet" translatesAutoresizingMaskIntoConstraints="NO" id="d01-rd-pEj">
-                                <rect key="frame" x="0.0" y="63" width="320" height="457"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -372,6 +372,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rulesForMatch" translatesAutoresizingMaskIntoConstraints="NO" id="7BN-nc-RQd">
+                                <rect key="frame" x="0.0" y="56" width="320" height="457"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Clx-zD-pp0">
                                 <rect key="frame" x="0.0" y="63" width="320" height="457"/>
                             </imageView>
@@ -393,94 +396,151 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="216" translatesAutoresizingMaskIntoConstraints="NO" id="0be-vI-aQJ">
-                                <rect key="frame" x="52" y="415" width="216" height="48"/>
+                                <rect key="frame" x="52" y="428" width="216" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kgk-Xh-fs2" customClass="PlayingCardView">
-                                <rect key="frame" x="43" y="145" width="40" height="60"/>
+                                <rect key="frame" x="34" y="129" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3yC-M5-n1i"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yqZ-Kq-mjf" customClass="PlayingCardView">
-                                <rect key="frame" x="91" y="145" width="40" height="60"/>
+                                <rect key="frame" x="86" y="129" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YJc-iz-aae"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsc-Fk-2xU" customClass="PlayingCardView">
-                                <rect key="frame" x="139" y="145" width="40" height="60"/>
+                                <rect key="frame" x="138" y="129" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gh7-CO-ApM"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vy8-7D-Awh" customClass="PlayingCardView">
-                                <rect key="frame" x="187" y="145" width="40" height="60"/>
+                                <rect key="frame" x="190" y="129" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WfC-dx-m4E"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sd1-e9-v1e" customClass="PlayingCardView">
-                                <rect key="frame" x="238" y="145" width="40" height="60"/>
+                                <rect key="frame" x="242" y="129" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BcK-iv-oTV"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2W-Yi-5bs" customClass="PlayingCardView">
-                                <rect key="frame" x="43" y="213" width="40" height="60"/>
+                                <rect key="frame" x="34" y="203" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eHp-uU-wXD"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="raW-gF-7Hj" customClass="PlayingCardView">
-                                <rect key="frame" x="91" y="213" width="40" height="60"/>
+                                <rect key="frame" x="86" y="203" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FOP-hD-6Vr"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvD-YQ-07J" customClass="PlayingCardView">
-                                <rect key="frame" x="139" y="213" width="40" height="60"/>
+                                <rect key="frame" x="138" y="203" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2O0-pt-1yq"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rQ-Jj-0yr" customClass="PlayingCardView">
-                                <rect key="frame" x="187" y="213" width="40" height="60"/>
+                                <rect key="frame" x="190" y="203" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="a0u-EJ-IsP"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="neu-f4-f3S" customClass="PlayingCardView">
-                                <rect key="frame" x="238" y="213" width="40" height="60"/>
+                                <rect key="frame" x="242" y="203" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HXu-pp-MZZ"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vS6-Uh-cVd" customClass="PlayingCardView">
-                                <rect key="frame" x="43" y="281" width="40" height="60"/>
+                                <rect key="frame" x="34" y="277" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRC-fh-v7j" customClass="PlayingCardView">
-                                <rect key="frame" x="91" y="281" width="40" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="p0q-oZ-lvL"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-va-ChR" customClass="PlayingCardView">
-                                <rect key="frame" x="139" y="281" width="40" height="60"/>
+                                <rect key="frame" x="138" y="277" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9BE-2n-JY1"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnI-PS-BfR" customClass="PlayingCardView">
-                                <rect key="frame" x="187" y="281" width="40" height="60"/>
+                                <rect key="frame" x="190" y="277" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dah-Nx-7Tm"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-yn-dSh" customClass="PlayingCardView">
-                                <rect key="frame" x="238" y="281" width="40" height="60"/>
+                                <rect key="frame" x="242" y="277" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iHm-NW-qQE"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U53-Qq-ZWS" customClass="PlayingCardView">
-                                <rect key="frame" x="43" y="349" width="40" height="60"/>
+                                <rect key="frame" x="34" y="351" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jQv-1e-kw3"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nbh-qe-bCO" customClass="PlayingCardView">
-                                <rect key="frame" x="91" y="349" width="40" height="60"/>
+                                <rect key="frame" x="86" y="351" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="R8d-ny-a0x"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFY-sd-oHl" customClass="PlayingCardView">
-                                <rect key="frame" x="139" y="349" width="40" height="60"/>
+                                <rect key="frame" x="138" y="351" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B7I-Ff-1j3"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcg-yL-9k0" customClass="PlayingCardView">
-                                <rect key="frame" x="187" y="349" width="40" height="60"/>
+                                <rect key="frame" x="190" y="351" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zcq-5l-6Wi"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dia-95-mdu" customClass="PlayingCardView">
-                                <rect key="frame" x="238" y="349" width="40" height="60"/>
+                                <rect key="frame" x="242" y="351" width="44" height="66"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="29i-D5-MTZ"/>
+                                </connections>
                             </view>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rulesForMatch" translatesAutoresizingMaskIntoConstraints="NO" id="7BN-nc-RQd">
-                                <rect key="frame" x="0.0" y="56" width="320" height="457"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rRC-fh-v7j" customClass="PlayingCardView">
+                                <rect key="frame" x="86" y="277" width="44" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pjq-0i-sY4"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

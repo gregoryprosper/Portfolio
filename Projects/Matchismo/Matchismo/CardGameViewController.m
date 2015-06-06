@@ -42,6 +42,17 @@
     [self updateUI];
 }
 
+- (IBAction)touchedCardView:(UIView *)sender {
+    [self.timer invalidate];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
+    self.logLabel.text = @"";
+    int chosenButtonIndex = (int)[self.cardViews indexOfObject:sender];
+    [self.game chooseCardAtIndex:chosenButtonIndex];
+    [self updateUI];
+}
+
+
+
 -(void)tick{
     self.durationTracker++;
     NSLog(@"%d",self.durationTracker);
@@ -70,6 +81,12 @@
 //            cardView.rank = 13;
             cardView.suit = card.suit;
             cardView.rank = card.rank;
+            if (card.chosen) {
+                cardView.faceUp = true;
+            }
+            else{
+                cardView.faceUp = false;
+            }
             self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
             [self updateLogLabel];
         }
@@ -228,11 +245,14 @@
 }
 
 -(CardMatchingGame*)game{
-    if (!_game && [self isKindOfClass:[SetCardGameViewController class]]) {
-        _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
-    }
-    else{
-        _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardViews count] usingDeck:[self createDeck]];
+    if (!_game) {
+        if ([self isKindOfClass:[SetCardGameViewController class]]) {
+            _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+        }
+        else{
+            _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardViews count] usingDeck:[self createDeck]];
+        }
+        
     }
     return _game;
 }
