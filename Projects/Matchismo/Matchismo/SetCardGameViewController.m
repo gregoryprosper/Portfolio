@@ -18,9 +18,7 @@
 
 
 @implementation SetCardGameViewController
--(void)viewDidLoad{
-    [self updateUI];
-}
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
