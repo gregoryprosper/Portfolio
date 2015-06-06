@@ -87,6 +87,8 @@
 #pragma mark - Initialization
 
 -(void)setup{
+    self.rank = 1;
+    self.suit = @"♠️";
     self.backgroundColor = nil;
     self.opaque = NO;
     self.contentMode = UIViewContentModeRedraw;

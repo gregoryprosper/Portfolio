@@ -13,6 +13,7 @@
 #import "PlayingCardGameViewController.h"
 #import "SetCardGameViewController.h"
 #import "PlayingCardView.h"
+#import "PlayingCard.h"
 
 
 @interface CardGameViewController ()
@@ -29,7 +30,7 @@
 @implementation CardGameViewController
 
 -(void)viewWillAppear:(BOOL)animated{
-    
+    [self updateUI];
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender {
@@ -64,9 +65,11 @@
         
         for (PlayingCardView *cardView in self.cardViews) {
             int cardIndex = (int)[self.cardViews indexOfObject:cardView];
-            Card *card = [self.game cardAtIndex:cardIndex];
-            cardView.suit = @"♥️";
-            cardView.rank = 13;
+            PlayingCard *card = (PlayingCard*) [self.game cardAtIndex:cardIndex];
+//            cardView.suit = @"♥️";
+//            cardView.rank = 13;
+            cardView.suit = card.suit;
+            cardView.rank = card.rank;
             self.scoreLabel.text = [NSString stringWithFormat:@"Score: %lu",(unsigned long)self.game.score];
             [self updateLogLabel];
         }
@@ -225,8 +228,11 @@
 }
 
 -(CardMatchingGame*)game{
-    if (!_game) {
+    if (!_game && [self isKindOfClass:[SetCardGameViewController class]]) {
         _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
+    }
+    else{
+        _game = [[CardMatchingGame alloc]initWithCardCount:[self.cardViews count] usingDeck:[self createDeck]];
     }
     return _game;
 }
