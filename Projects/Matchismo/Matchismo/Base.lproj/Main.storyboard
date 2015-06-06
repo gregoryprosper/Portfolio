@@ -292,7 +292,7 @@
                     <navigationItem key="navigationItem" title="Set" id="sYu-MF-yiX">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="History" id="YET-sa-N3a">
                             <connections>
-                                <segue destination="yjj-jf-YwS" kind="push" identifier="toMatchSetHistory" id="j1w-9D-cVh"/>
+                                <segue destination="9UC-fl-6mb" kind="push" identifier="toMatchSetHistory" id="iZd-0y-niy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -326,39 +326,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTh-Jj-T2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="599" y="-279"/>
-        </scene>
-        <!--History-->
-        <scene sceneID="uU7-lo-BJO">
-            <objects>
-                <viewController id="yjj-jf-YwS" customClass="HistoryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UB8-Dd-Wsg"/>
-                        <viewControllerLayoutGuide type="bottom" id="KKz-og-XBg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="afk-oF-xyp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="SiY-i3-ddG">
-                                <rect key="frame" x="0.0" y="64" width="320" height="457"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyl-n0-9YU">
-                                <rect key="frame" x="20" y="145" width="280" height="295"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.85098046059999999" green="0.31764706970000001" blue="0.30980393290000002" alpha="1" colorSpace="deviceRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="History" id="cke-9w-S00"/>
-                    <connections>
-                        <outlet property="historyTextField" destination="Qyl-n0-9YU" id="Hwh-iT-rFr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MA4-62-zpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1166" y="-279"/>
         </scene>
         <!--2 Card Match-->
         <scene sceneID="ufC-wZ-h7g">
@@ -612,7 +579,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqF-28-OVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1166" y="-950"/>
+            <point key="canvasLocation" x="1094" y="-607"/>
         </scene>
         <!--Match-->
         <scene sceneID="eqw-8a-Qtx">
@@ -947,5 +914,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="PBe-zi-sWq"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.82745105028152466" green="0.32549020648002625" blue="0.32941177487373352" alpha="1" colorSpace="deviceRGB"/>
 </document>
