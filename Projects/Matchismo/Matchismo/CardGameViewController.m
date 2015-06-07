@@ -451,8 +451,11 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
+    
     [self.timer invalidate];
     [self saveScores];
-    [self reDeal:nil]; //When view disapears game is reset
+    
+    //When view disapears game is reset
+    [self reDeal:nil]; 
 }
 @end
