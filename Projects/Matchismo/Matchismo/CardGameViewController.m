@@ -297,13 +297,12 @@
     return 0;
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    [self.timer invalidate];
+-(void)saveScores{
     NSArray *scoreArray = [[NSUserDefaults standardUserDefaults] arrayForKey:@"scoreArray"];
     NSArray *gameArray = [[NSUserDefaults standardUserDefaults] arrayForKey:@"gameArray"];
     NSArray *dateArray = [[NSUserDefaults standardUserDefaults] arrayForKey:@"dateArray"];
     NSArray *durationArray = [[NSUserDefaults standardUserDefaults] arrayForKey:@"durationArray"];
-     
+    
     if (scoreArray != nil) {
         if (scoreArray.count == 1 && self.game.score > [[scoreArray lastObject] intValue]){ //Arrays only have one Score
             
@@ -449,6 +448,11 @@
         }
         
     }
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [self.timer invalidate];
+    [self saveScores];
     [self reDeal:nil]; //When view disapears game is reset
 }
 @end
