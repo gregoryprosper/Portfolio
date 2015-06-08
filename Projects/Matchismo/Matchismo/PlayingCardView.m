@@ -104,10 +104,9 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
-    CGContextTranslateCTM( context, 0.5f * self.bounds.size.width, 0.5f * self.bounds.size.height ) ;
     CGContextRotateCTM(context, M_PI);
 
-    textBounds.origin = CGPointMake(-20, -30);
+    textBounds.origin = CGPointMake(-42, -62);
     textBounds.size = [cornerText size];
     [cornerText drawInRect:textBounds];
     
