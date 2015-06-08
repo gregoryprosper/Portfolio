@@ -36,6 +36,10 @@
     return self.bounds.size.height / CORNER_FONT_STANDARD_HEIGHT;
 }
 
+-(CGFloat)centerScaleFactor {
+    return self.bounds.size.height / 75;
+}
+
 -(CGFloat)cornerRadius{
     return CORNER_RADIUS * [self cornerScaleFactor];
 }
@@ -62,6 +66,7 @@
         [roundedRect stroke];
         
         [self drawCorners];
+        [self drawCenter];
     }
     else{
         // Drawing code
@@ -111,6 +116,23 @@
     [cornerText drawInRect:textBounds];
     
     CGContextRestoreGState(context);
+    
+}
+
+-(void)drawCenter{
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+    UIFont *centerFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    centerFont = [centerFont fontWithSize:centerFont.pointSize * [self centerScaleFactor]];
+    
+    NSAttributedString *cornerText = [[NSAttributedString alloc]initWithString: [NSString stringWithFormat:@"%@",self.suit] attributes:@{ NSFontAttributeName: centerFont,NSParagraphStyleAttributeName: paragraphStyle}];
+    
+    CGRect textBounds;
+    textBounds.origin = CGPointMake((self.bounds.size.width / 2) - (cornerText.size.width / 2), (self.bounds.size.height / 2) - (cornerText.size.height / 2));
+    textBounds.size = [cornerText size];
+    [cornerText drawInRect:textBounds];
     
 }
 
