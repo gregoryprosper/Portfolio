@@ -339,6 +339,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rulesForMatch" translatesAutoresizingMaskIntoConstraints="NO" id="7BN-nc-RQd">
+                                <rect key="frame" x="0.0" y="63" width="320" height="457"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Clx-zD-pp0">
                                 <rect key="frame" x="0.0" y="63" width="320" height="457"/>
                             </imageView>
@@ -505,9 +508,6 @@
                                     <action selector="touchedCardView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pjq-0i-sY4"/>
                                 </connections>
                             </view>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rulesForMatch" translatesAutoresizingMaskIntoConstraints="NO" id="7BN-nc-RQd">
-                                <rect key="frame" x="0.0" y="63" width="320" height="457"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -899,7 +899,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="640" height="960"/>
+        <image name="background" width="639" height="910"/>
         <image name="button" width="81" height="40"/>
         <image name="cardFront@1x" width="64" height="96"/>
         <image name="highScoresHeader" width="433" height="128"/>
