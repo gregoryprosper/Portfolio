@@ -12,7 +12,7 @@ import iAd
 class ScrambledMessageViewController: UIViewController, ADBannerViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
-
+    @IBOutlet weak var shareButton: UIButton!
     
     var scrambledMessage:String?
     
@@ -40,7 +40,11 @@ class ScrambledMessageViewController: UIViewController, ADBannerViewDelegate {
     @IBAction func share(sender: UIButton) {
         let activityVc = UIActivityViewController(activityItems: [textView.text] , applicationActivities: nil)
         activityVc.excludedActivityTypes = [UIActivityTypePrint, UIActivityTypeAirDrop, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll,UIActivityTypePostToVimeo,UIActivityTypePostToFlickr,UIActivityTypePostToTencentWeibo,UIActivityTypeAirDrop,UIActivityTypeAddToReadingList,UIActivityTypePostToWeibo]
-        self.presentViewController(activityVc, animated: true, completion: nil)
+        
+        if let ppc = activityVc.popoverPresentationController{
+            ppc.sourceView = shareButton
+        }
+        presentViewController(activityVc, animated: true, completion: nil)
     }
 
     @IBAction func close(sender: UIBarButtonItem) {

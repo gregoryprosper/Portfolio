@@ -35,6 +35,7 @@
                                     <rect key="frame" x="58" y="125" width="326" height="0.0"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <mask key="constraints">
                                         <include reference="fNW-hS-YTB"/>
                                     </mask>
@@ -84,6 +85,9 @@
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="16" y="57" width="210" height="22"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVF-fi-lPO">
                                 <rect key="frame" x="250" y="312" width="100" height="40"/>
@@ -117,6 +121,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                     <mask key="constraints">
                                         <include reference="oMH-Gz-LKq"/>
                                     </mask>
@@ -129,13 +134,16 @@
                                     <constraint firstAttribute="height" constant="100" id="B52-YI-Ndj">
                                         <variation key="heightClass=compact" constant="50"/>
                                         <variation key="heightClass=compact-widthClass=regular" constant="75"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                     <rect key="frame" x="16" y="86" width="368" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 </variation>
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXf-7a-V7C">
@@ -160,8 +168,11 @@
                         <constraints>
                             <constraint firstItem="gTR-ml-ejl" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="90" id="01l-3y-f6Z">
                                 <variation key="heightClass=compact" constant="80"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="110"/>
                             </constraint>
-                            <constraint firstItem="FnS-nH-CCO" firstAttribute="baseline" secondItem="rEa-66-jbi" secondAttribute="baseline" id="4Hl-iw-UDz"/>
+                            <constraint firstItem="FnS-nH-CCO" firstAttribute="baseline" secondItem="rEa-66-jbi" secondAttribute="baseline" id="4Hl-iw-UDz">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-3"/>
+                            </constraint>
                             <constraint firstItem="FnS-nH-CCO" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="C6X-WS-Rn6"/>
                             <constraint firstItem="9uz-wY-PJp" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="JS6-lV-sfh"/>
                             <constraint firstItem="xgB-PZ-E5O" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="364" id="LkZ-ui-VOE"/>
@@ -270,7 +281,7 @@
             </objects>
             <point key="canvasLocation" x="1450" y="360"/>
         </scene>
-        <!--Scrambled Message View Controller-->
+        <!--Scrambler-->
         <scene sceneID="4DO-lt-7Qx">
             <objects>
                 <viewController id="0ao-rk-yPS" customClass="ScrambledMessageViewController" customModule="iHideIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -287,6 +298,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click text to copy to clipboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGm-sm-89v">
                                 <rect key="frame" x="16" y="289" width="568" height="21"/>
@@ -308,7 +322,31 @@
                                         <include reference="yXP-Aa-z8K"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-hX-bzR">
+                                <rect key="frame" x="281" y="432" width="38" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYe-6P-LNK">
+                                <rect key="frame" x="16" y="131" width="568" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="BgG-at-LAo">
+                                        <variation key="heightClass=compact" constant="50"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2e-Br-9dA">
                                 <rect key="frame" x="268" y="360" width="64" height="64"/>
                                 <state key="normal" image="share">
@@ -318,28 +356,13 @@
                                     <action selector="share:" destination="0ao-rk-yPS" eventType="touchUpInside" id="QNE-Ge-JXI"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYe-6P-LNK">
-                                <rect key="frame" x="16" y="131" width="568" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="BgG-at-LAo">
-                                        <variation key="heightClass=compact" constant="50"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-hX-bzR">
-                                <rect key="frame" x="281" y="432" width="38" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bGm-sm-89v" firstAttribute="leading" secondItem="8s3-Vy-Ztd" secondAttribute="leadingMargin" id="4m6-Z4-9Rx"/>
-                            <constraint firstItem="AYe-6P-LNK" firstAttribute="top" secondItem="ANd-to-aPb" secondAttribute="bottom" constant="8" id="B5v-ql-41k"/>
+                            <constraint firstItem="AYe-6P-LNK" firstAttribute="top" secondItem="ANd-to-aPb" secondAttribute="bottom" constant="8" id="B5v-ql-41k">
+                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="s2e-Br-9dA" secondAttribute="centerX" id="Cz7-Sm-psL"/>
                             <constraint firstItem="AYe-6P-LNK" firstAttribute="top" secondItem="C50-2T-Y4Z" secondAttribute="bottom" constant="67" id="Nkd-bR-Nx1"/>
                             <constraint firstItem="AYe-6P-LNK" firstAttribute="trailing" secondItem="8s3-Vy-Ztd" secondAttribute="trailingMargin" id="OHD-ze-upo"/>
@@ -353,7 +376,7 @@
                             <constraint firstItem="AYe-6P-LNK" firstAttribute="leading" secondItem="8s3-Vy-Ztd" secondAttribute="leadingMargin" id="zkX-Sy-6qX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Chf-DX-8Lj">
+                    <navigationItem key="navigationItem" title="Scrambler" id="Chf-DX-8Lj">
                         <barButtonItem key="leftBarButtonItem" image="Return" id="PF5-Hh-kcX">
                             <connections>
                                 <action selector="close:" destination="0ao-rk-yPS" id="jC5-bx-4kC"/>
@@ -361,6 +384,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="shareButton" destination="s2e-Br-9dA" id="SZ6-aL-8du"/>
                         <outlet property="textView" destination="AYe-6P-LNK" id="ZPr-mk-lVa"/>
                     </connections>
                 </viewController>
@@ -368,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="2151" y="-321"/>
         </scene>
-        <!--Unscrambled Message View Controller-->
+        <!--Unscrambler-->
         <scene sceneID="bqX-Fd-BbO">
             <objects>
                 <viewController id="OqO-Md-G1B" customClass="UnscrambledMessageViewController" customModule="iHideIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -385,18 +409,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="102" width="242" height="10"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFW-Q1-e7e">
                                 <rect key="frame" x="16" y="127" width="568" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="aX7-OF-nb3"/>
+                                    <constraint firstAttribute="height" constant="150" id="aX7-OF-nb3">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
                             </textView>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unlock" translatesAutoresizingMaskIntoConstraints="NO" id="XBT-OI-JFB">
                                 <rect key="frame" x="139" y="277" width="323" height="323"/>
@@ -428,11 +457,13 @@
                             <constraint firstItem="kHe-kk-gd6" firstAttribute="leading" secondItem="gdH-l1-8gh" secondAttribute="leadingMargin" constant="250" id="hgf-tw-WNg"/>
                             <constraint firstAttribute="trailing" secondItem="u2c-Cn-tvQ" secondAttribute="trailing" constant="265" id="iWG-fh-pUL"/>
                             <constraint firstItem="iFW-Q1-e7e" firstAttribute="trailing" secondItem="gdH-l1-8gh" secondAttribute="trailingMargin" id="jPn-eb-Cnb"/>
-                            <constraint firstItem="iFW-Q1-e7e" firstAttribute="top" secondItem="ltB-N5-Ahd" secondAttribute="bottom" constant="8" id="qDs-sR-KM9"/>
+                            <constraint firstItem="iFW-Q1-e7e" firstAttribute="top" secondItem="ltB-N5-Ahd" secondAttribute="bottom" constant="8" id="qDs-sR-KM9">
+                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="XBT-OI-JFB" firstAttribute="top" secondItem="u2c-Cn-tvQ" secondAttribute="bottom" id="rve-fJ-yRs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vHE-nh-H57">
+                    <navigationItem key="navigationItem" title="Unscrambler" id="vHE-nh-H57">
                         <barButtonItem key="leftBarButtonItem" image="Return" id="aTd-81-zNi">
                             <connections>
                                 <action selector="close:" destination="OqO-Md-G1B" id="ohn-ao-9bc"/>
@@ -478,6 +509,7 @@
                                     <rect key="frame" x="58" y="125" width="326" height="0.0"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <mask key="constraints">
                                         <include reference="NQL-sS-pAE"/>
                                     </mask>
@@ -490,7 +522,7 @@
                                     <constraint firstAttribute="height" constant="100" id="5I6-sC-yuD">
                                         <variation key="heightClass=compact" constant="50"/>
                                         <variation key="heightClass=compact-widthClass=regular" constant="75"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -500,6 +532,9 @@
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="86" width="368" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTX-Zk-1xj">
@@ -534,6 +569,9 @@
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="57" width="210" height="22"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-bo-mu9">
                                 <rect key="frame" x="16" y="245" width="81" height="21"/>
@@ -555,6 +593,7 @@
                                     <rect key="frame" x="16" y="129" width="34" height="22"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                     <mask key="constraints">
                                         <include reference="vlv-1E-L9B"/>
                                     </mask>
@@ -616,6 +655,7 @@
                             <constraint firstItem="TSd-js-OZU" firstAttribute="leading" secondItem="K9i-bo-mu9" secondAttribute="trailing" constant="8" id="RF2-Md-lQM"/>
                             <constraint firstItem="Qot-Kd-xkM" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="90" id="T7u-O0-qfL">
                                 <variation key="heightClass=compact" constant="80"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="110"/>
                             </constraint>
                             <constraint firstItem="K9i-bo-mu9" firstAttribute="top" secondItem="Qot-Kd-xkM" secondAttribute="bottom" constant="35" id="XSF-Jt-Jdn">
                                 <variation key="heightClass=compact" constant="15"/>
@@ -633,7 +673,9 @@
                             <constraint firstItem="Qot-Kd-xkM" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="sC0-96-6fW"/>
                             <constraint firstItem="qeN-2h-NEc" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" constant="357" id="t0A-em-zTP"/>
                             <constraint firstItem="TSd-js-OZU" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="tyx-eu-CRQ"/>
-                            <constraint firstItem="K9i-bo-mu9" firstAttribute="baseline" secondItem="TSd-js-OZU" secondAttribute="baseline" id="vCf-Va-BQ5"/>
+                            <constraint firstItem="K9i-bo-mu9" firstAttribute="baseline" secondItem="TSd-js-OZU" secondAttribute="baseline" id="vCf-Va-BQ5">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-3"/>
+                            </constraint>
                             <constraint firstItem="Qot-Kd-xkM" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="wun-Ge-bc8"/>
                             <constraint firstAttribute="centerX" secondItem="GTX-Zk-1xj" secondAttribute="centerX" id="xBG-22-GeE"/>
                         </constraints>

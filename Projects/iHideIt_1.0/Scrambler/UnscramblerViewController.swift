@@ -52,13 +52,16 @@ class Unscrambler: UIViewController, ADBannerViewDelegate {
         
         if checkFieldsEmpty(){
             if let unscrambledMessage = ScramblerBrain.decryptData(textView.text, key: keyField.text){
-                return true
+                if unscrambledMessage == ""{
+                    showInvalidAlert()
+                    return false
+                }
+                else{
+                    return true
+                }
             }
             else{
-                let alert = UIAlertController(title: "Oops", message: "Wrong key entered.", preferredStyle: .Alert)
-                let action = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
-                alert.addAction(action)
-                presentViewController(alert, animated: true, completion: nil)
+                showInvalidAlert()
                 return false
             }
         }
@@ -69,6 +72,13 @@ class Unscrambler: UIViewController, ADBannerViewDelegate {
             presentViewController(alert, animated: true, completion: nil)
             return false
         }
+    }
+    
+    func showInvalidAlert(){
+        let alert = UIAlertController(title: "Oops", message: "Invalid Input/password", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
