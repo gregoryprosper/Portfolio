@@ -196,10 +196,19 @@ namespace BlockBuilder
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if ((saveStream = saveFileDialog1.OpenFile()) != null)
+                try
                 {
-                    formatter.Serialize(saveStream, this.blocks);
-                    saveStream.Close();
+                    if ((saveStream = saveFileDialog1.OpenFile()) != null)
+                    {
+                        using (saveStream)
+                        {
+                            formatter.Serialize(saveStream, this.blocks);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error could not save file: " + ex.Message);
                 }
             }
         }
@@ -211,11 +220,19 @@ namespace BlockBuilder
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if ((openStream = openFileDialog1.OpenFile()) != null)
+                try
                 {
-                    this.blocks = (List<Block>) formatter.Deserialize(openStream);
-                    openStream.Close();
-                    this.mainPanel.Invalidate();
+                    if ((openStream = openFileDialog1.OpenFile()) != null)
+                    {
+                        using (openStream)
+                        {
+                            this.blocks = (List<Block>)formatter.Deserialize(openStream);
+                            this.mainPanel.Invalidate();
+                        }
+                    }
+                }
+                catch (Exception ex){
+                    MessageBox.Show("Error could not open file: " + ex.Message);
                 }
             }
         }

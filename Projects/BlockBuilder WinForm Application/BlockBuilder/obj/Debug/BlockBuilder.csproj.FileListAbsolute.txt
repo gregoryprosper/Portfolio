@@ -7,3 +7,12 @@ V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuil
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Debug\BlockBuilder.exe
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Debug\BlockBuilder.pdb
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Debug\BlockBuilder.csprojResolveAssemblyReference.cache
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\bin\Debug\BlockBuilder.exe.config
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\obj\Debug\BlockBuilder.exe
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\obj\Debug\BlockBuilder.pdb
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\bin\Debug\BlockBuilder.exe
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\bin\Debug\BlockBuilder.pdb
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\obj\Debug\BlockBuilder.csprojResolveAssemblyReference.cache
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\obj\Debug\BlockBuilder.BlockBuilder.resources
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\obj\Debug\BlockBuilder.Properties.Resources.resources
+V:\Misc\Portfolio\Projects\BlockBuilder WinForm Application\BlockBuilder\obj\Debug\BlockBuilder.csproj.GenerateResource.Cache
