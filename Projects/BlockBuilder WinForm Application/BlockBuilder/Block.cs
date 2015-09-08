@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlockBuilder
 {
+    [Serializable]
     class Block
     {
         private Rectangle bounds;
@@ -35,12 +36,16 @@ namespace BlockBuilder
 
         public void move(int x, int y, Rectangle enclosedBounds)
         {
-            if(bounds.X + bounds.Width + x <= enclosedBounds.Width && bounds.X + x >= enclosedBounds.X){
+            if(bounds.X + bounds.Width + x <= enclosedBounds.Width - 2 && bounds.X + x >= 0){
+                Console.WriteLine("Block Left side: " + bounds.X + " Block Right side: " + (bounds.X + bounds.Width));
+                Console.WriteLine("enclosedBounds left side: " + enclosedBounds.X + " enclosedBounds right side: " + enclosedBounds.X + enclosedBounds.Width);
                 bounds.X += x;
             }
 
-            if (bounds.Y + bounds.Height + y <= enclosedBounds.Height && bounds.Y + y >= enclosedBounds.Y)
+            if (bounds.Y + bounds.Height + y <= enclosedBounds.Height - 2 && bounds.Y + y >= 0)
             {
+                Console.WriteLine("Block Top side: " + bounds.Y + " Block Bottom side: " + (bounds.Y + bounds.Height));
+                Console.WriteLine("enclosedBounds Top side: " + enclosedBounds.Y + " enclosedBounds Bottom side: " + (enclosedBounds.Y + enclosedBounds.Height));
                 bounds.Y += y;
             }
         }

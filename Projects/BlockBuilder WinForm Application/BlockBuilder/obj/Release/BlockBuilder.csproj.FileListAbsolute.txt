@@ -18,3 +18,9 @@ V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuil
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\bin\Release\BlockBuilder.exe.config
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Release\BlockBuilder.exe
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Release\BlockBuilder.pdb
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\bin\Release\BlockBuilder.exe
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\bin\Release\BlockBuilder.pdb
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Release\BlockBuilder.csprojResolveAssemblyReference.cache
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Release\BlockBuilder.BlockBuilder.resources
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Release\BlockBuilder.Properties.Resources.resources
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 1\BlockBuilder\BlockBuilder\obj\Release\BlockBuilder.csproj.GenerateResource.Cache

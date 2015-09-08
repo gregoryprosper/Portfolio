@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,7 +37,7 @@ namespace BlockBuilder
                 }
                 if (currentBlock == block){
                     using(Pen pen = new Pen(Color.Yellow,2.0f)){
-                        g.DrawRectangle(pen,block.Bounds.X + 10,block.Bounds.Y + 10,block.Bounds.Width - 20,block.Bounds.Height - 20);
+                        g.DrawRectangle(pen, block.Bounds.X + block.Bounds.Width / 4, block.Bounds.Y + block.Bounds.Height / 4, block.Bounds.Width - block.Bounds.Width / 2, block.Bounds.Height - block.Bounds.Height / 2);
                     }
                 }
             }
@@ -184,6 +187,37 @@ namespace BlockBuilder
         private void trackBar_Scroll(object sender, EventArgs e)
         {
             Block.size = trackBar.Value;
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream saveStream;
+            IFormatter formatter = new BinaryFormatter();
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((saveStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    formatter.Serialize(saveStream, this.blocks);
+                    saveStream.Close();
+                }
+            }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Stream openStream;
+            IFormatter formatter = new BinaryFormatter();
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((openStream = openFileDialog1.OpenFile()) != null)
+                {
+                    this.blocks = (List<Block>) formatter.Deserialize(openStream);
+                    openStream.Close();
+                    this.mainPanel.Invalidate();
+                }
+            }
         }
     }
 }
