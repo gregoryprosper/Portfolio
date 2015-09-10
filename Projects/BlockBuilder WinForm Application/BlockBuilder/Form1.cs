@@ -226,8 +226,15 @@ namespace BlockBuilder
                     {
                         using (openStream)
                         {
-                            this.blocks = (List<Block>)formatter.Deserialize(openStream);
-                            this.mainPanel.Invalidate();
+                            List<Block> fileObject = formatter.Deserialize(openStream) as List<Block>;
+                            if (fileObject != null){
+                                this.blocks = fileObject;
+                                this.mainPanel.Invalidate();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid File!");
+                            }
                         }
                     }
                 }
