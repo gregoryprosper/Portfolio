@@ -207,7 +207,9 @@
 		00A70FD41B3F1E7B00CB1EB1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Prosper Inc.";
 				TargetAttributes = {
 					00A70FDB1B3F1E7B00CB1EB1 = {
@@ -336,6 +338,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -406,6 +409,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Scrambler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gprosper.iHideIt;
 				PRODUCT_NAME = iHideIt;
 				SWIFT_OBJC_BRIDGING_HEADER = "Scrambler/Scrambler-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -420,6 +424,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Scrambler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gprosper.iHideIt;
 				PRODUCT_NAME = iHideIt;
 				SWIFT_OBJC_BRIDGING_HEADER = "Scrambler/Scrambler-Bridging-Header.h";
 			};
@@ -428,16 +433,14 @@
 		00A710011B3F1E7B00CB1EB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ScramblerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prosper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = iHideItTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iScrambler.app/iScrambler";
 			};
@@ -446,12 +449,10 @@
 		00A710021B3F1E7B00CB1EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = ScramblerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prosper.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = iHideItTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iScrambler.app/iScrambler";
 			};

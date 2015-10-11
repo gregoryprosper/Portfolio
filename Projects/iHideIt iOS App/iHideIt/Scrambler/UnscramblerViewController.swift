@@ -41,7 +41,7 @@ class Unscrambler: UIViewController, ADBannerViewDelegate {
         self.keyField.secureTextEntry = NSUserDefaults.standardUserDefaults().boolForKey("hidePassword")
     }
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if textView.isFirstResponder(){
             textView.resignFirstResponder()
         }
@@ -51,9 +51,19 @@ class Unscrambler: UIViewController, ADBannerViewDelegate {
         }
     }
     
+    @IBAction func rightSwipeDetected(sender: UISwipeGestureRecognizer) {
+        let currentIndex = self.tabBarController?.selectedIndex
+        self.tabBarController?.selectedIndex = currentIndex! - 1
+    }
+    
+    @IBAction func leftSwipeDetected(sender: UISwipeGestureRecognizer) {
+        let currentIndex = self.tabBarController?.selectedIndex
+        self.tabBarController?.selectedIndex = currentIndex! + 1
+    }
+    
     func setUpAddBanner(){
         bannerView = ADBannerView(adType: .Banner)
-        bannerView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+        bannerView!.translatesAutoresizingMaskIntoConstraints = false
         bannerView!.delegate = self
         bannerView!.hidden = true
         view.addSubview(bannerView!)
@@ -67,10 +77,9 @@ class Unscrambler: UIViewController, ADBannerViewDelegate {
         view.addConstraints([lhConstraint,rhConstraint,btConstraint])
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if checkFieldsEmpty(){
-            if let unscrambledMessage = ScramblerBrain.decryptData(textView.text, key: keyField.text){
+            if let unscrambledMessage = ScramblerBrain.decryptData(textView.text, key: keyField.text!){
                 if unscrambledMessage == ""{
                     showInvalidAlert()
                     return false
@@ -102,7 +111,7 @@ class Unscrambler: UIViewController, ADBannerViewDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dc: UnscrambledMessageViewController = (segue.destinationViewController as! UINavigationController).topViewController as! UnscrambledMessageViewController
-        dc.unscrambledMessage = ScramblerBrain.decryptData(textView.text, key: keyField.text)
+        dc.unscrambledMessage = ScramblerBrain.decryptData(textView.text, key: keyField.text!)
     }
     
     private func checkFieldsEmpty() -> Bool{
@@ -110,12 +119,12 @@ class Unscrambler: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        println("success")
+        print("success")
         bannerView?.hidden = false
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        println(error.description)
+        print(error.description)
         bannerView?.hidden = true
     }
     

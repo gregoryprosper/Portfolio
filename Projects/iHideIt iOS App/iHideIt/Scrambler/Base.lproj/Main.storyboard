@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -20,7 +21,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEa-66-jbi">
-                                <rect key="frame" x="105" y="242" width="479" height="30"/>
+                                <rect key="frame" x="107" y="242" width="473" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="fNW-hS-YTB"/>
                                 </constraints>
@@ -43,9 +45,11 @@
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="9uz-wY-PJp">
                                 <rect key="frame" x="240" y="28" width="120" height="39"/>
+                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="qkc-W5-UIE">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qkc-W5-UIE" secondAttribute="height" multiplier="1:1" id="dpr-Lt-XKA"/>
                                 </constraints>
@@ -62,6 +66,7 @@
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgB-PZ-E5O">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="jgy-mI-Q8l"/>
@@ -78,7 +83,8 @@
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a message to scramble" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miF-TP-uxf">
-                                <rect key="frame" x="16" y="85" width="188" height="17"/>
+                                <rect key="frame" x="20" y="85" width="188" height="17"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -91,6 +97,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pVF-fi-lPO">
                                 <rect key="frame" x="250" y="312" width="100" height="40"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GZe-aS-Zia"/>
                                     <constraint firstAttribute="height" constant="40" id="Pfm-hn-dhp"/>
@@ -108,7 +115,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnS-nH-CCO">
-                                <rect key="frame" x="16" y="245" width="81" height="21"/>
+                                <rect key="frame" x="20" y="245" width="79" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="oMH-Gz-LKq"/>
                                 </constraints>
@@ -128,7 +136,8 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTR-ml-ejl">
-                                <rect key="frame" x="16" y="110" width="568" height="100"/>
+                                <rect key="frame" x="20" y="110" width="560" height="100"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="B52-YI-Ndj">
@@ -148,6 +157,7 @@
                             </textView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXf-7a-V7C">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="PsK-nG-BfP"/>
@@ -164,7 +174,9 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="gTR-ml-ejl" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="90" id="01l-3y-f6Z">
                                 <variation key="heightClass=compact" constant="80"/>
@@ -238,6 +250,9 @@
                                 <include reference="YMf-Rl-gP3"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wA1-l8-Etq" appends="YES" id="xhg-Qk-Stn"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scramble" image="Lock_Filled" id="acW-dT-cKf"/>
                     <connections>
@@ -246,6 +261,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="wA1-l8-Etq">
+                    <connections>
+                        <action selector="leftSwipeDetected:" destination="9pv-A4-QxB" id="lwR-L5-bd6"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="750" y="-321"/>
         </scene>
@@ -256,6 +276,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A8y-Gh-eQD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="0ao-rk-yPS" kind="relationship" relationship="rootViewController" id="54E-EG-nL4"/>
@@ -272,6 +293,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lz5-nj-N19">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="OqO-Md-G1B" kind="relationship" relationship="rootViewController" id="uSg-yF-Zx8"/>
@@ -294,13 +316,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kiU-ga-ReK">
-                                <rect key="frame" x="0.0" y="64" width="600" height="287"/>
+                                <rect key="frame" x="4" y="64" width="592" height="287"/>
+                                <animations/>
                                 <connections>
                                     <segue destination="XE2-Uq-hb6" kind="embed" id="yeD-ZO-Yib"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgl-ld-U6m">
                                 <rect key="frame" x="268" y="376" width="64" height="64"/>
+                                <animations/>
                                 <state key="normal" image="share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -309,13 +333,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share iHideIt with a friend" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhx-jy-H9V">
-                                <rect key="frame" x="233" y="448" width="134" height="14"/>
+                                <rect key="frame" x="232" y="448" width="136" height="14"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="naZ-bP-SmZ" firstAttribute="top" secondItem="kiU-ga-ReK" secondAttribute="bottom" constant="200" id="0aH-IW-eKY">
                                 <variation key="heightClass=regular-widthClass=regular" constant="400"/>
@@ -342,12 +369,12 @@
                             <mask key="constraints">
                                 <exclude reference="X65-Lo-rOS"/>
                                 <exclude reference="r4r-77-1SE"/>
-                                <exclude reference="Qzh-hz-yQW"/>
-                                <exclude reference="bh0-ce-LNA"/>
-                                <exclude reference="dtl-QR-eqT"/>
                                 <exclude reference="5qb-dN-WRb"/>
                                 <exclude reference="Kp9-VV-r9f"/>
                                 <exclude reference="KrE-yX-V6H"/>
+                                <exclude reference="bh0-ce-LNA"/>
+                                <exclude reference="dtl-QR-eqT"/>
+                                <exclude reference="Qzh-hz-yQW"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -357,23 +384,31 @@
                                 <exclude reference="eav-4g-zXX"/>
                                 <exclude reference="g69-fU-BX0"/>
                                 <include reference="r4r-77-1SE"/>
-                                <exclude reference="0aH-IW-eKY"/>
-                                <include reference="Qzh-hz-yQW"/>
-                                <exclude reference="9fd-5v-jin"/>
-                                <exclude reference="Xtg-PB-Cdp"/>
-                                <include reference="bh0-ce-LNA"/>
-                                <include reference="dtl-QR-eqT"/>
                                 <include reference="5qb-dN-WRb"/>
                                 <exclude reference="D6p-X0-eVr"/>
                                 <include reference="Kp9-VV-r9f"/>
                                 <include reference="KrE-yX-V6H"/>
                                 <exclude reference="Lhz-xF-v49"/>
+                                <exclude reference="9fd-5v-jin"/>
+                                <exclude reference="Xtg-PB-Cdp"/>
+                                <include reference="bh0-ce-LNA"/>
+                                <include reference="dtl-QR-eqT"/>
+                                <exclude reference="0aH-IW-eKY"/>
+                                <include reference="Qzh-hz-yQW"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aj9-ei-Lt8" appends="YES" id="HgH-Y3-Ovr"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="8R3-Mx-2sJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ypw-B0-bgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="aj9-ei-Lt8">
+                    <connections>
+                        <action selector="rightSwipeDetected:" destination="NDd-ca-Rh1" id="elp-hy-E28"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1450" y="1059"/>
         </scene>
@@ -382,30 +417,36 @@
             <objects>
                 <tableViewController id="XE2-Uq-hb6" customClass="SettingsTableTableViewController" customModule="iHideIt" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fye-Cx-HVO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="287"/>
+                        <rect key="frame" x="0.0" y="0.0" width="592" height="287"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Security" id="8Ae-f9-YPv">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="68Z-z2-6jo">
+                                        <rect key="frame" x="0.0" y="50" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="68Z-z2-6jo" id="GTi-Wz-N9b">
+                                            <rect key="frame" x="0.0" y="0.0" width="592" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hide Password While Typing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKd-Ub-0Ha">
-                                                    <rect key="frame" x="8" y="11" width="195" height="18"/>
+                                                    <rect key="frame" x="8" y="11" width="194" height="18"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-30-w0E">
-                                                    <rect key="frame" x="543" y="5" width="51" height="31"/>
+                                                    <rect key="frame" x="535" y="5" width="51" height="31"/>
+                                                    <animations/>
                                                     <connections>
                                                         <action selector="toggleShowPassword:" destination="XE2-Uq-hb6" eventType="valueChanged" id="BHx-5b-knH"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="tqB-30-w0E" firstAttribute="trailing" secondItem="GTi-Wz-N9b" secondAttribute="trailingMargin" id="Bri-mb-dJZ"/>
                                                 <constraint firstItem="tqB-30-w0E" firstAttribute="trailing" secondItem="GTi-Wz-N9b" secondAttribute="trailingMargin" id="BwN-ld-XqX"/>
@@ -425,25 +466,31 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="sFS-pA-lNL">
+                                        <rect key="frame" x="0.0" y="94" width="592" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sFS-pA-lNL" id="Mjc-MP-cko">
+                                            <rect key="frame" x="0.0" y="0.0" width="592" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear Password Field On Exit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5M-Fu-5vn">
-                                                    <rect key="frame" x="8" y="11" width="200" height="18"/>
+                                                    <rect key="frame" x="8" y="11" width="196" height="18"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4q0-uW-U1s">
-                                                    <rect key="frame" x="543" y="5" width="51" height="31"/>
+                                                    <rect key="frame" x="535" y="5" width="51" height="31"/>
+                                                    <animations/>
                                                     <connections>
                                                         <action selector="toggleClearPassword:" destination="XE2-Uq-hb6" eventType="valueChanged" id="MJG-5I-unR"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="4q0-uW-U1s" firstAttribute="trailing" secondItem="Mjc-MP-cko" secondAttribute="trailingMargin" id="9XC-sX-jD5"/>
                                                 <constraint firstItem="4q0-uW-U1s" firstAttribute="trailing" secondItem="Mjc-MP-cko" secondAttribute="trailingMargin" id="OQg-9U-cID"/>
@@ -463,6 +510,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -490,6 +538,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UVJ-lH-biv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -514,7 +563,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your message has been scrambled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANd-to-aPb">
-                                <rect key="frame" x="16" y="106" width="568" height="17"/>
+                                <rect key="frame" x="20" y="106" width="560" height="17"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -523,7 +573,8 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click text to copy to clipboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGm-sm-89v">
-                                <rect key="frame" x="16" y="289" width="568" height="21"/>
+                                <rect key="frame" x="20" y="289" width="560" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="dCe-b3-a8q"/>
                                     <constraint firstAttribute="height" constant="21" id="yXP-Aa-z8K"/>
@@ -548,12 +599,14 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-hX-bzR">
                                 <rect key="frame" x="281" y="432" width="38" height="17"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYe-6P-LNK">
-                                <rect key="frame" x="16" y="131" width="568" height="150"/>
+                                <rect key="frame" x="20" y="131" width="560" height="150"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="BgG-at-LAo">
@@ -569,6 +622,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2e-Br-9dA">
                                 <rect key="frame" x="268" y="360" width="64" height="64"/>
+                                <animations/>
                                 <state key="normal" image="share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -577,6 +631,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bGm-sm-89v" firstAttribute="leading" secondItem="8s3-Vy-Ztd" secondAttribute="leadingMargin" id="4m6-Z4-9Rx"/>
@@ -628,6 +683,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Your message has been unscrambled" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltB-N5-Ahd">
                                 <rect key="frame" x="179" y="102" width="242" height="17"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -636,7 +692,8 @@
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFW-Q1-e7e">
-                                <rect key="frame" x="16" y="127" width="568" height="150"/>
+                                <rect key="frame" x="20" y="127" width="560" height="150"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="aX7-OF-nb3">
@@ -651,19 +708,23 @@
                             </textView>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unlock" translatesAutoresizingMaskIntoConstraints="NO" id="XBT-OI-JFB">
                                 <rect key="frame" x="139" y="277" width="323" height="323"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XBT-OI-JFB" secondAttribute="height" multiplier="1:1" id="F5c-gX-X0F"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2c-Cn-tvQ">
                                 <rect key="frame" x="266" y="277" width="69" height="0.0"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-kk-gd6">
                                 <rect key="frame" x="250" y="600" width="101" height="0.0"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="kHe-kk-gd6" secondAttribute="trailing" constant="249" id="3D9-j8-vp7"/>
@@ -713,7 +774,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TSd-js-OZU">
-                                <rect key="frame" x="105" y="242" width="479" height="30"/>
+                                <rect key="frame" x="107" y="242" width="473" height="30"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NQL-sS-pAE"/>
                                 </constraints>
@@ -738,7 +800,8 @@
                                 </variation>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qot-Kd-xkM">
-                                <rect key="frame" x="16" y="110" width="568" height="100"/>
+                                <rect key="frame" x="20" y="110" width="560" height="100"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5I6-sC-yuD">
@@ -761,6 +824,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTX-Zk-1xj">
                                 <rect key="frame" x="250" y="312" width="100" height="40"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Vac-S7-jiR"/>
                                     <constraint firstAttribute="height" constant="40" id="yAz-8a-Bzq"/>
@@ -781,7 +845,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a message to unscramble" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QzZ-N7-gJT">
-                                <rect key="frame" x="16" y="85" width="204" height="17"/>
+                                <rect key="frame" x="20" y="85" width="204" height="17"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -796,7 +861,8 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9i-bo-mu9">
-                                <rect key="frame" x="16" y="245" width="81" height="21"/>
+                                <rect key="frame" x="20" y="245" width="79" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="vlv-1E-L9B"/>
                                 </constraints>
@@ -823,13 +889,16 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="banner" translatesAutoresizingMaskIntoConstraints="NO" id="dbO-1B-UYh">
                                 <rect key="frame" x="240" y="28" width="120" height="39"/>
+                                <animations/>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeN-2h-NEc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unlock" translatesAutoresizingMaskIntoConstraints="NO" id="fCb-j3-mhb">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fCb-j3-mhb" secondAttribute="height" multiplier="1:1" id="6N5-Yl-QsC"/>
                                 </constraints>
@@ -846,6 +915,7 @@
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chV-8Y-1OQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="M9d-rC-UPE"/>
@@ -865,7 +935,9 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="dbO-1B-UYh" secondAttribute="centerX" id="0mJ-U8-vlD"/>
                             <constraint firstItem="Qot-Kd-xkM" firstAttribute="top" secondItem="QzZ-N7-gJT" secondAttribute="bottom" constant="8" symbolic="YES" id="1RL-vK-pqQ"/>
@@ -939,6 +1011,10 @@
                                 <include reference="Nc1-Qh-ZFu"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="032-gO-G11" appends="YES" id="zNA-ks-CZo"/>
+                            <outletCollection property="gestureRecognizers" destination="K58-8U-64B" appends="YES" id="CBm-k0-WmY"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Unscramble" image="Unlock_Filled" id="cPa-gy-q4n"/>
                     <connections>
@@ -947,17 +1023,28 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="032-gO-G11">
+                    <connections>
+                        <action selector="rightSwipeDetected:" destination="8rJ-Kc-sve" id="xaz-9k-MFr"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="K58-8U-64B">
+                    <connections>
+                        <action selector="leftSwipeDetected:" destination="8rJ-Kc-sve" id="mUo-oX-IgJ"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController modalTransitionStyle="partialCurl" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>

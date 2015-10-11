@@ -18,7 +18,7 @@ class Scrambler: UIViewController, ADBannerViewDelegate {
     
     func setUpAddBanner(){
         bannerView = ADBannerView(adType: .Banner)
-        bannerView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+        bannerView!.translatesAutoresizingMaskIntoConstraints = false
         bannerView!.delegate = self
         bannerView!.hidden = true
         view.addSubview(bannerView!)
@@ -56,7 +56,7 @@ class Scrambler: UIViewController, ADBannerViewDelegate {
         clearBanner()
     }
 
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if textView.isFirstResponder(){
             textView.resignFirstResponder()
         }
@@ -67,7 +67,12 @@ class Scrambler: UIViewController, ADBannerViewDelegate {
         
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    @IBAction func leftSwipeDetected(sender: UISwipeGestureRecognizer) {
+        let currentIndex = self.tabBarController?.selectedIndex
+        self.tabBarController?.selectedIndex = currentIndex! + 1
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if checkFieldsEmpty(){
             return true
         }
@@ -83,7 +88,7 @@ class Scrambler: UIViewController, ADBannerViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dc: ScrambledMessageViewController = (segue.destinationViewController as! UINavigationController).topViewController as! ScrambledMessageViewController
         
-        dc.scrambledMessage = ScramblerBrain.encryptString(textView.text, key: keyField.text)
+        dc.scrambledMessage = ScramblerBrain.encryptString(textView.text, key: keyField.text!)
     }
     
     private func checkFieldsEmpty() -> Bool{
@@ -91,12 +96,12 @@ class Scrambler: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        println("success")
+        print("success")
         bannerView?.hidden = false
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        println(error.description)
+        print(error.description)
         bannerView?.hidden = true
     }
 }

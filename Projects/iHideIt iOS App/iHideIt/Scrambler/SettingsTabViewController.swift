@@ -25,7 +25,7 @@ class SettingsTabViewController: UIViewController, ADBannerViewDelegate {
     
     func setUpAddBanner(){
         bannerView = ADBannerView(adType: .Banner)
-        bannerView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+        bannerView!.translatesAutoresizingMaskIntoConstraints = false
         bannerView!.delegate = self
         bannerView!.hidden = true
         view.addSubview(bannerView!)
@@ -44,6 +44,11 @@ class SettingsTabViewController: UIViewController, ADBannerViewDelegate {
         bannerView?.delegate = nil
         bannerView = nil
     }
+    
+    @IBAction func rightSwipeDetected(sender: UISwipeGestureRecognizer) {
+        let currentIndex = self.tabBarController?.selectedIndex
+        self.tabBarController?.selectedIndex = currentIndex! - 1
+    }
 
     @IBAction func shareApp(sender: UIButton) {
         let activityVc = UIActivityViewController(activityItems: ["Download iHideIt here https://appsto.re/us/GklF8.i"] , applicationActivities: nil)
@@ -58,12 +63,12 @@ class SettingsTabViewController: UIViewController, ADBannerViewDelegate {
     }
     
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        println("success")
+        print("success")
         bannerView?.hidden = false
     }
     
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError error: NSError!) {
-        println(error.description)
+        print(error.description)
         bannerView?.hidden = true
     }
 
