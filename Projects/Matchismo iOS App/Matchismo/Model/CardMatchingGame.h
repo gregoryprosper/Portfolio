@@ -11,11 +11,10 @@
 @class Card;
 
 @interface CardMatchingGame : NSObject
-@property (nonatomic,readwrite) NSUInteger score;
+@property (nonatomic,readonly) NSUInteger score;
 @property (nonatomic,strong) NSMutableArray *log;
 @property (nonatomic) NSUInteger gameMode;
 @property (nonatomic) NSUInteger cardsSelected;
-@property (nonatomic,strong) NSMutableArray *cards;
 //Designated Initializer
 -(instancetype)initWithCardCount:(NSUInteger)count
                        usingDeck:(Deck*)deck;

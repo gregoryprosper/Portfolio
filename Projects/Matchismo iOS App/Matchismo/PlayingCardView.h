@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PlayingCardView : UIControl
+
 @property (nonatomic) NSUInteger rank;
 @property (nonatomic,strong) NSString *suit;
 @property (nonatomic) BOOL faceUp;

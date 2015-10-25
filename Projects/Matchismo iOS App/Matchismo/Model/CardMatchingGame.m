@@ -11,6 +11,11 @@
 #import "Card.h"
 #import "SetCardDeck.h"
 
+@interface CardMatchingGame()
+@property (nonatomic,readwrite) NSUInteger score;
+@property (nonatomic,strong) NSMutableArray *cards;
+@end
+
 @implementation CardMatchingGame
 
 -(NSMutableArray*)cards{
