@@ -1,0 +1,16 @@
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\bin\Release\BattleTanks.exe.config
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\bin\Release\BattleTanks.exe
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\bin\Release\BattleTanks.pdb
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\Battle_Tanks.csprojResolveAssemblyReference.cache
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\MainWindow.baml
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\MainWindow.g.cs
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\App.g.cs
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\BattleTanks_MarkupCompile.cache
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\BattleTanks.g.resources
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\BattleTanks.Properties.Resources.resources
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\Battle_Tanks.csproj.GenerateResource.Cache
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\BattleTanks.exe
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\Battle_Tanks\obj\Release\BattleTanks.pdb
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\Battle Tanks\Battle_Tanks\bin\Release\BattleTanks.exe.config
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\Battle Tanks\Battle_Tanks\obj\Release\BattleTanks.exe
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\Battle Tanks\Battle_Tanks\obj\Release\BattleTanks.pdb

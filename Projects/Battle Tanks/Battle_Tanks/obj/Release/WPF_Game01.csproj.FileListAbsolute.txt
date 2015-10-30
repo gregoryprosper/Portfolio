@@ -1,0 +1,13 @@
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\bin\Release\WPFStartupDemo.exe.config
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\bin\Release\WPFStartupDemo.exe
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\bin\Release\WPFStartupDemo.pdb
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\MainWindow.baml
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\MainWindow.g.cs
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\App.g.cs
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\WPFStartupDemo_MarkupCompile.cache
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\WPFStartupDemo.g.resources
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\WPFStartupDemo.Properties.Resources.resources
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\WPF_Game01.csproj.GenerateResource.Cache
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\WPFStartupDemo.exe
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\WPFStartupDemo.pdb
+V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game01 151014b Empty Game\WPF_Game01\obj\Release\WPF_Game01.csprojResolveAssemblyReference.cache
