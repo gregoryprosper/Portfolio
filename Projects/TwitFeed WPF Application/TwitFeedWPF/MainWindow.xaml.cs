@@ -33,7 +33,8 @@ namespace TwitFeedWPF
 
         private async void getAuthenticationToken(bool expired)
         {
-            if (expired) {
+            if (expired)
+            {
                 var client = new HttpClient();
                 var uri = new Uri("https://api.twitter.com/oauth2/token");
 
@@ -93,7 +94,7 @@ namespace TwitFeedWPF
                     this.getAuthenticationToken(true);
                 }
             }
-            
+
         }
 
         private async Task searchTweets(String search)
@@ -140,11 +141,13 @@ namespace TwitFeedWPF
             parseTweets(content);
         }
 
-        private void parseTweets(String json){
-            dynamic stuff = JObject.Parse(json);
-            JArray tweets = stuff["statuses"];
+        private void parseTweets(String json)
+        {
+            JObject stuff = JObject.Parse(json);
+            JArray tweets = (JArray)stuff["statuses"];
             List<Tweet> items = new List<Tweet>();
-            foreach(JObject tweet in tweets){
+            foreach (JObject tweet in tweets)
+            {
                 Tweet temp = new Tweet();
                 temp.id = (String)tweet["id_str"];
                 temp.profilePicPath = (String)tweet["user"]["profile_image_url"];
@@ -159,6 +162,55 @@ namespace TwitFeedWPF
             }
             this.tweetsList.ItemsSource = items;
         }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (searchTextBoxHasValue() && hasInternetConnectivity())
+            {
+                searchTweets(searchTextBox.Text);
+            }
+            else if (!searchTextBoxHasValue())
+            {
+                MessageBox.Show(this, "Enter keywords to search for.", "Oops");
+            }
+            else if (!hasInternetConnectivity())
+            {
+                MessageBox.Show(this, "No internet connection.", "Error");
+            }
+        }
+
+        private void popularRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            this.queryParam = "popular";
+            restartSearchWithFilter();
+        }
+
+        private void recentRadio_Checked(object sender, RoutedEventArgs e)
+        {
+            this.queryParam = "recent";
+            restartSearchWithFilter();
+        }
+
+        private void tweetsCountSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            this.tweetCount = (int) tweetsCountSlider.Value;
+        }
+
+        private void tweetsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            Tweet selectedTweet = (Tweet)e.AddedItems[0];
+            string url = string.Format("http://twitter.com/{0}/status/{1}", selectedTweet.userName, selectedTweet.id);
+            Process.Start(url);
+        }
+
+        private void tweetsList_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            centerNoTweetsLabel();
+        }
+
+        
+
+        /////// Helper Methods ////////////////
 
         private bool hasInternetConnectivity()
         {
@@ -183,43 +235,21 @@ namespace TwitFeedWPF
             return searchTextBox.Text.Length > 0;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void restartSearchWithFilter()
         {
-            if (searchTextBoxHasValue() && hasInternetConnectivity())
+            if (searchTextBoxHasValue() && hasInternetConnectivity() && tweetsList.HasItems)
             {
                 searchTweets(searchTextBox.Text);
             }
-            else if (!searchTextBoxHasValue())
+        }
+        private void centerNoTweetsLabel()
+        {
+            if (this.noTweetsLabel.Visibility == Visibility.Visible)
             {
-                MessageBox.Show(this,"Enter keywords to search for.", "Oops");
-            }
-            else if (!hasInternetConnectivity())
-            {
-                MessageBox.Show(this, "No internet connection.", "Error");
+                double left = (this.tweetsList.ActualWidth * .50) - (this.noTweetsLabel.ActualWidth / 2);
+                double bottom = (this.tweetsList.ActualHeight * .50) - (this.noTweetsLabel.ActualHeight / 2);
+                this.noTweetsLabel.Margin = new Thickness(left, 0, 0, bottom);
             }
         }
-
-        private void popularRadio_Checked(object sender, RoutedEventArgs e)
-        {
-            this.queryParam = "popular";
-        }
-
-        private void recentRadio_Checked(object sender, RoutedEventArgs e)
-        {
-            this.queryParam = "recent";
-        }
-
-        private void tweetsCountSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            this.tweetCount = (int) tweetsCountSlider.Value;
-        }
-
-        private void tweetsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            Tweet selectedTweet = (Tweet)e.AddedItems[0];
-            string url = string.Format("http://twitter.com/{0}/status/{1}", selectedTweet.userName, selectedTweet.id);
-            Process.Start(url);
-        }
-
     }
 }

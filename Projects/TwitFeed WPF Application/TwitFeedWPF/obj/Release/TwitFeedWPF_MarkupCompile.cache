@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-V:\School\Fall 2015\Graphical Application Development\Assignments\Final Project\TwitFeedWPF\TwitFeedWPF\obj\Debug\
+V:\School\Fall 2015\Graphical Application Development\Assignments\Final Project\TwitFeedWPF\TwitFeedWPF\obj\Release\
 TwitFeedWPF
 none
 false
-DEBUG;TRACE
+TRACE
 V:\School\Fall 2015\Graphical Application Development\Assignments\Final Project\TwitFeedWPF\TwitFeedWPF\App.xaml
 11151548125
 
