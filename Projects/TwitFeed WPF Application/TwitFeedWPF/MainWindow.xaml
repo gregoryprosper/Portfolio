@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Converters="clr-namespace:TwitFeedWPF"
-        Title="TwitFeed" Height="600" Width="800" Background="#FF58AEE8" ResizeMode="NoResize">
+        Title="TwitFeed" Height="600" Width="800" Background="#FF58AEE8" ResizeMode="NoResize" Loaded="MainWindow1_Loaded">
     <Window.Resources>
         <Converters:BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
         <BitmapImage x:Key="twitter" UriSource="Images/twitter.png"/>
@@ -25,9 +25,9 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="mainGrid">
-        <TextBox x:Name="searchTextBox" Height="50" Margin="100,30,116,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36"/>
+        <TextBox x:Name="searchTextBox" Height="50" Margin="100,30,116,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" KeyDown="searchTextBox_KeyDown"/>
         <Button x:Name="searchButton" Content="Search" Margin="0,30,10,0" VerticalAlignment="Top" Height="50" Click="searchButton_Click" HorizontalAlignment="Right" Width="101"/>
-        <ListView x:Name="tweetsList" Margin="10,115,10,10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="White" SelectionChanged="tweetsList_SelectionChanged" Loaded="tweetsList_Loaded">
+        <ListView x:Name="tweetsList" Margin="10,115,10,10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="White" SelectionChanged="tweetsList_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="0,10" >

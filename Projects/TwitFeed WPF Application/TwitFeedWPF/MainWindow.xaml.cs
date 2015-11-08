@@ -240,16 +240,25 @@ namespace TwitFeedWPF
             }
         }
 
-        private void tweetsList_Loaded(object sender, RoutedEventArgs e)
+        private void MainWindow1_Loaded(object sender, RoutedEventArgs e)
         {
             centerNoTweetsLabel();
-        }
+            this.searchTextBox.Focus();
+        } 
 
         private void centerNoTweetsLabel()
         {
             double left = (this.tweetsList.ActualWidth * .50) - (this.noTweetsLabel.ActualWidth / 2);
             double bottom = (this.tweetsList.ActualHeight * .50) - (this.noTweetsLabel.ActualHeight / 2);
             this.noTweetsLabel.Margin = new Thickness(left, 0, 0, bottom);
+        }
+
+        private void searchTextBox_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Enter)
+            {
+                searchButton_Click(null, e);
+            }
         }
 
         /////// Helper Methods ////////////////
@@ -283,6 +292,6 @@ namespace TwitFeedWPF
             {
                 searchTweets(searchTextBox.Text);
             }
-        } 
+        }
     }
 }
