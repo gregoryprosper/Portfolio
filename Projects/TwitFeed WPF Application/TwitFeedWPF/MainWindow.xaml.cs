@@ -37,27 +37,22 @@ namespace TwitFeedWPF
         {
             if (expired)
             {
-                var client = new HttpClient();
-                var uri = new Uri("https://api.twitter.com/oauth2/token");
+                HttpClient client = new HttpClient();
+                Uri uri = new Uri("https://api.twitter.com/oauth2/token");
 
-                var encodedConsumerKey = WebUtility.UrlEncode("cLfPzscHFnxCouUD7KQl1F8Il");
-                var encodedConsumerSecret = WebUtility.UrlEncode("yeAe5xXU78fBxX5lt19uLPU04J3BRi7ROiijLzMYToqjpX76Sl");
-                var combinedKeys = String.Format("{0}:{1}", encodedConsumerKey, encodedConsumerSecret);
+                String encodedConsumerKey = WebUtility.UrlEncode("TCBVP4gcLXGiKRDJDf4TenBwj");
+                String encodedConsumerSecret = WebUtility.UrlEncode("Da1bgtkTbUszwOn0AZfMicTywF2Tx7OFDU9wqMhJjn7Dsb3Y15");
+                String combinedKeys = String.Format("{0}:{1}", encodedConsumerKey, encodedConsumerSecret);
 
-                var utfBytes = System.Text.Encoding.UTF8.GetBytes(combinedKeys);
-                var encodedString = Convert.ToBase64String(utfBytes);
+                byte[] utfBytes = System.Text.Encoding.UTF8.GetBytes(combinedKeys);
+                String encodedString = Convert.ToBase64String(utfBytes);
 
                 client.DefaultRequestHeaders.Add("Authorization", string.Format("Basic {0}", encodedString));
 
-                var data = new List<KeyValuePair<string, string>> 
-                { 
-                    new KeyValuePair<string, string>("grant_type", "client_credentials") 
-                };
-
-                var postData = new FormUrlEncodedContent(data);
-
-                var response = await client.PostAsync(uri, postData);
-                AuthenticationResponse authenticationResponse;
+                List<KeyValuePair<string, string>> data = new List<KeyValuePair<string, string>> { new KeyValuePair<string, string>("grant_type", "client_credentials") };
+                FormUrlEncodedContent postData = new FormUrlEncodedContent(data);
+                HttpResponseMessage response = await client.PostAsync(uri, postData);
+                
                 using (response)
                 {
                     if (response.StatusCode != System.Net.HttpStatusCode.OK)
@@ -66,7 +61,7 @@ namespace TwitFeedWPF
                     }
 
                     var content = await response.Content.ReadAsStringAsync();
-                    authenticationResponse = JsonConvert.DeserializeObject<AuthenticationResponse>(content);
+                    AuthenticationResponse authenticationResponse = JsonConvert.DeserializeObject<AuthenticationResponse>(content);
 
                     if (authenticationResponse.TokenType != "bearer")
                     {
@@ -101,9 +96,9 @@ namespace TwitFeedWPF
 
         private async Task searchTweets(String search)
         {
-            var client = new HttpClient();
-            var searchUrl = string.Format("https://api.twitter.com/1.1/search/tweets.json?q={0}&count={1}&result_type={2}", search, tweetCount, queryParam);
-            var uri = new Uri(searchUrl);
+            HttpClient client = new HttpClient();
+            String searchUrl = string.Format("https://api.twitter.com/1.1/search/tweets.json?q={0}&count={1}&result_type={2}", search, tweetCount, queryParam);
+            Uri uri = new Uri(searchUrl);
 
             client.DefaultRequestHeaders.Add("Authorization", string.Format("Bearer {0}", this.bearerToken));
             HttpResponseMessage response = await client.GetAsync(uri);
