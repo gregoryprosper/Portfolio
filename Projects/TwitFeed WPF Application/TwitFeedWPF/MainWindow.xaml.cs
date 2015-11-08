@@ -2,7 +2,6 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -12,6 +11,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
+using System.Windows.Media;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace TwitFeedWPF
 {
@@ -198,17 +200,57 @@ namespace TwitFeedWPF
 
         private void tweetsList_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            Tweet selectedTweet = (Tweet)e.AddedItems[0];
-            string url = string.Format("http://twitter.com/{0}/status/{1}", selectedTweet.userName, selectedTweet.id);
-            Process.Start(url);
+            saveTweet(e);
         }
 
-        private void tweetsList_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void saveTweet(System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            if (tweetsList.SelectedIndex > -1)
+            {
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+                dlg.FileName = "Tweet"; // Default file name
+                dlg.DefaultExt = ".png"; // Default file extension
+                dlg.Filter = "Image files (.png)|*.png"; // Filter files by extension
+
+                // Show save file dialog box
+                Nullable<bool> result = dlg.ShowDialog();
+
+                // Process save file dialog box results
+                if (result == true)
+                {
+                    // Save document
+                    ListViewItem listItemView = (ListViewItem)this.tweetsList.ItemContainerGenerator.ContainerFromItem(e.AddedItems[0]);
+                    listItemView.Measure(new Size(listItemView.ActualWidth, listItemView.ActualHeight));
+                    listItemView.Arrange(new Rect(new Size(listItemView.ActualWidth, listItemView.ActualHeight)));
+
+                    RenderTargetBitmap bitmap = new RenderTargetBitmap((int)listItemView.ActualWidth, (int)listItemView.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+                    bitmap.Render(listItemView);
+
+                    tweetsList.Items.Refresh();
+
+                    using (Stream file = dlg.OpenFile())
+                    {
+                        PngBitmapEncoder encoder = new PngBitmapEncoder();
+                        encoder.Frames.Add(BitmapFrame.Create(bitmap));
+                        encoder.Save(file);
+                    }
+                }
+
+                tweetsList.SelectedIndex = -1;
+            }
+        }
+
+        private void tweetsList_Loaded(object sender, RoutedEventArgs e)
         {
             centerNoTweetsLabel();
         }
 
-        
+        private void centerNoTweetsLabel()
+        {
+            double left = (this.tweetsList.ActualWidth * .50) - (this.noTweetsLabel.ActualWidth / 2);
+            double bottom = (this.tweetsList.ActualHeight * .50) - (this.noTweetsLabel.ActualHeight / 2);
+            this.noTweetsLabel.Margin = new Thickness(left, 0, 0, bottom);
+        }
 
         /////// Helper Methods ////////////////
 
@@ -241,15 +283,6 @@ namespace TwitFeedWPF
             {
                 searchTweets(searchTextBox.Text);
             }
-        }
-        private void centerNoTweetsLabel()
-        {
-            if (this.noTweetsLabel.Visibility == Visibility.Visible)
-            {
-                double left = (this.tweetsList.ActualWidth * .50) - (this.noTweetsLabel.ActualWidth / 2);
-                double bottom = (this.tweetsList.ActualHeight * .50) - (this.noTweetsLabel.ActualHeight / 2);
-                this.noTweetsLabel.Margin = new Thickness(left, 0, 0, bottom);
-            }
-        }
+        } 
     }
 }
