@@ -55,43 +55,35 @@ namespace TwitFeedWPF
                 
                 using (response)
                 {
-                    if (response.StatusCode != System.Net.HttpStatusCode.OK)
-                    {
-                        throw new Exception("Did not work!");
-                    }
+                    if (response.StatusCode != System.Net.HttpStatusCode.OK) throw new Exception("Get Authentication Token Failed!");
 
-                    var content = await response.Content.ReadAsStringAsync();
+                    String content = await response.Content.ReadAsStringAsync();
                     AuthenticationResponse authenticationResponse = JsonConvert.DeserializeObject<AuthenticationResponse>(content);
 
-                    if (authenticationResponse.TokenType != "bearer")
-                    {
-                        throw new Exception("wrong result type");
-                    }
+                    if (authenticationResponse.TokenType != "bearer") throw new Exception("Response was not a bearer token");
 
                     this.bearerToken = authenticationResponse.AccessToken;
 
-                    //write to file
-                    IFormatter formatter = new BinaryFormatter();
-                    Stream saveStream = new FileStream("auth.bin", FileMode.Create);
-                    formatter.Serialize(saveStream, authenticationResponse.AccessToken);
-                    saveStream.Close();
+                    //Write to file
+                    using (Stream saveStream = new FileStream("auth.bin", FileMode.Create)){
+                        IFormatter formatter = new BinaryFormatter();
+                        formatter.Serialize(saveStream, this.bearerToken);
+                    }
                 }
             }
             else
             {
-                if (File.Exists("auth.bin"))
-                {
-                    IFormatter formatter = new BinaryFormatter();
-                    Stream stream = new FileStream("auth.bin", FileMode.Open, FileAccess.Read, FileShare.Read);
-                    this.bearerToken = (String)formatter.Deserialize(stream);
-                    stream.Close();
-                }
-                else
+                if (!File.Exists("auth.bin"))
                 {
                     this.getAuthenticationToken(true);
+                    return;
                 }
-            }
 
+                IFormatter formatter = new BinaryFormatter();
+                Stream stream = new FileStream("auth.bin", FileMode.Open, FileAccess.Read, FileShare.Read);
+                this.bearerToken = (String)formatter.Deserialize(stream);
+                stream.Close();
+            }
         }
 
         private async Task searchTweets(String search)
@@ -134,8 +126,9 @@ namespace TwitFeedWPF
                 MessageBox.Show(this, "The URI requested is invalid or the resource requested, such as a user, does not exists. Also returned when the requested format is not supported by the requested method.", "Not Found");
             }
 
-            string content = await response.Content.ReadAsStringAsync();
+            String content = await response.Content.ReadAsStringAsync();
             parseTweets(content);
+            scrollListToTop();
         }
 
         private void parseTweets(String json)
@@ -287,6 +280,12 @@ namespace TwitFeedWPF
             {
                 searchTweets(searchTextBox.Text);
             }
+        }
+
+        private void scrollListToTop()
+        {
+            Object firstObject = this.tweetsList.Items[0];
+            this.tweetsList.ScrollIntoView(firstObject);
         }
     }
 }
