@@ -189,8 +189,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             cover = BitmapFactory.decodeByteArray(coverData, 0, coverData.length);
         }
 
-        SongMetaData  songMetaData = new SongMetaData(title,artist,album,cover);
-        return songMetaData;
+        return new SongMetaData(title,artist,album,cover);
     }
 
     private void startProgressTracker(){
@@ -234,7 +233,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private class ProgressBarTracker extends TimerTask{
         @Override
         public void run() {
-            songSeekBar.setProgress(mediaPlayer.getCurrentPosition());
+            if (mediaPlayer != null){
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        songSeekBar.setProgress(mediaPlayer.getCurrentPosition());
+                    }
+                });
+            }
         }
     }
 
