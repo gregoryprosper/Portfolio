@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mediaPlayer.seekTo(seekBar.getProgress());
     }
 
-    private class SongMetaData {
+    private static class SongMetaData {
         String title;
         String artist;
         String album;
