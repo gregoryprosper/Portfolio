@@ -40,9 +40,6 @@
                                     </constraint>
                                     <constraint firstAttribute="width" constant="5" id="gaF-Pr-O4u"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="270" y="26" width="5" height="600"/>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIn-Ga-MuF">
                                 <rect key="frame" x="392" y="75" width="5" height="300"/>
@@ -53,9 +50,6 @@
                                     </constraint>
                                     <constraint firstAttribute="width" constant="5" id="kQg-Tk-0q4"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="525" y="26" width="5" height="600"/>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpT-4N-oAM">
                                 <rect key="frame" x="20" y="200" width="183" height="49"/>
@@ -178,13 +172,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wtA-DX-DND" firstAttribute="centerY" secondItem="84S-fA-1H7" secondAttribute="centerY" id="0zL-Mu-BSn"/>
                             <constraint firstItem="LpT-4N-oAM" firstAttribute="height" secondItem="xzI-Xl-0Kh" secondAttribute="height" id="1G1-C1-i9x"/>
                             <constraint firstItem="jnO-Ry-h4H" firstAttribute="height" secondItem="kwi-nb-5at" secondAttribute="height" id="3pW-Q1-LGy"/>
                             <constraint firstItem="Jwm-Ce-WHh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="4J0-S2-eCh">
-                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="225"/>
                             </constraint>
                             <constraint firstItem="8PU-mM-Cab" firstAttribute="width" secondItem="Jwm-Ce-WHh" secondAttribute="width" id="5P3-0q-nro"/>
                             <constraint firstItem="QGk-i2-yHU" firstAttribute="width" secondItem="xzI-Xl-0Kh" secondAttribute="width" id="7jv-of-enB"/>
@@ -193,7 +187,9 @@
                             <constraint firstItem="2k5-mi-6Sv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ai-9N-fFI"/>
                             <constraint firstItem="aIn-Ga-MuF" firstAttribute="leading" secondItem="xzI-Xl-0Kh" secondAttribute="trailing" id="9yw-Jo-gpa"/>
                             <constraint firstItem="8PU-mM-Cab" firstAttribute="height" secondItem="Jwm-Ce-WHh" secondAttribute="height" id="AGd-ST-7gR"/>
-                            <constraint firstItem="kwi-nb-5at" firstAttribute="height" secondItem="g3U-C5-xKc" secondAttribute="height" multiplier="0.33333" id="ANE-Lb-mKn"/>
+                            <constraint firstItem="kwi-nb-5at" firstAttribute="height" secondItem="g3U-C5-xKc" secondAttribute="height" multiplier="0.33333" id="ANE-Lb-mKn">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="3N8-mi-nbD" firstAttribute="height" secondItem="kwi-nb-5at" secondAttribute="height" id="Bn6-Gp-dx4"/>
                             <constraint firstItem="wtA-DX-DND" firstAttribute="height" secondItem="kwi-nb-5at" secondAttribute="height" id="CPf-7h-3dr"/>
                             <constraint firstItem="POr-Nm-uoH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.8" id="Gpg-hb-TAg"/>
@@ -220,11 +216,13 @@
                             <constraint firstItem="7k3-pj-dNZ" firstAttribute="centerX" secondItem="jnO-Ry-h4H" secondAttribute="centerX" id="Zy5-wB-y5L"/>
                             <constraint firstItem="gWM-dq-H2o" firstAttribute="centerY" secondItem="g3U-C5-xKc" secondAttribute="centerY" multiplier="5/3" id="bWh-dn-E1p">
                                 <variation key="widthClass=compact" constant="-50"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="-25"/>
                             </constraint>
                             <constraint firstItem="84S-fA-1H7" firstAttribute="bottom" secondItem="kwi-nb-5at" secondAttribute="bottom" id="bqB-vG-mLC"/>
                             <constraint firstItem="2k5-mi-6Sv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.65" id="cNs-0P-Mp2"/>
                             <constraint firstItem="kwi-nb-5at" firstAttribute="centerY" secondItem="g3U-C5-xKc" secondAttribute="centerY" multiplier="0.333333" id="dl0-aI-Ods">
                                 <variation key="widthClass=compact" constant="50"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="25"/>
                             </constraint>
                             <constraint firstItem="gWM-dq-H2o" firstAttribute="height" secondItem="kwi-nb-5at" secondAttribute="height" id="dw3-pl-y6M"/>
                             <constraint firstItem="xzI-Xl-0Kh" firstAttribute="top" secondItem="Jwm-Ce-WHh" secondAttribute="bottom" constant="25" id="epu-6g-xFV">
