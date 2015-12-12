@@ -74,6 +74,10 @@ class ViewController: UIViewController {
     func addXorO(location:Int){
         let block = getBlockAtLocation(location)
         
+        guard block?.titleForState(UIControlState.Normal)?.isEmpty == true else{
+            return
+        }
+        
         if playerTurn == Turn.X {
             block?.setImage(UIImage(named: "cross.png"),forState: UIControlState.Normal)
             block?.setTitle("X", forState: UIControlState.Normal)
