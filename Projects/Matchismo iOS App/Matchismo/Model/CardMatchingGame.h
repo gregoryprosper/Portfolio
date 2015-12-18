@@ -15,6 +15,7 @@
 @property (nonatomic,strong) NSMutableArray *log;
 @property (nonatomic) NSUInteger gameMode;
 @property (nonatomic) NSUInteger cardsSelected;
+
 //Designated Initializer
 -(instancetype)initWithCardCount:(NSUInteger)count
                        usingDeck:(Deck*)deck;

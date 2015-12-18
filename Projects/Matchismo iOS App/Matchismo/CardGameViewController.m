@@ -19,12 +19,13 @@
 @interface CardGameViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) IBOutletCollection(PlayingCardView) NSArray *cardViews;
-@property (nonatomic,strong) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *logLabel;
+@property (nonatomic,strong) CardMatchingGame *game;
 @property (nonatomic, strong) NSMutableArray *attributedLogList;
 @property (nonatomic,strong) NSTimer *timer;
 @property (nonatomic) int durationTracker;
+
 @end
 
 @implementation CardGameViewController
