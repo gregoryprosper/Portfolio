@@ -11,10 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
+    ProgressBar progressBar;
 
     Bitmap image;
 
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = (ImageView) findViewById(R.id.imageView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         //Get Image from drawable file
         Drawable drawableImage = getResources().getDrawable(R.drawable.image);
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void invertButtonClicked(View view) {
+        progressBar.setVisibility(View.VISIBLE);
+
         Thread invertImageThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -42,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         imageView.setImageBitmap(image);
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 });
             }
