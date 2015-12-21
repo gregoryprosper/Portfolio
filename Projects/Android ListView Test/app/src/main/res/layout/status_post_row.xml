@@ -109,6 +109,7 @@
         android:layout_height="30dp">
 
         <Button
+            android:id="@+id/likeButton"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -117,6 +118,7 @@
             android:text="Like"/>
 
         <Button
+            android:id="@+id/commentButton"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -125,6 +127,7 @@
             android:text="Comment"/>
 
         <Button
+            android:id="@+id/shareButton"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

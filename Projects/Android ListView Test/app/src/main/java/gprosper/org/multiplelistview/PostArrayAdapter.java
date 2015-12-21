@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -68,8 +70,29 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
             row.setTag(postHolder);
         }
 
-        Post post = getItem(position);
+        final Post post = getItem(position);
         bindPostToHolder(post,postHolder);
+
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+                    case R.id.likeButton:
+                        Toast.makeText(PostArrayAdapter.this.getContext(),"Like Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.commentButton:
+                        Toast.makeText(PostArrayAdapter.this.getContext(),"Comment Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.shareButton:
+                        Toast.makeText(PostArrayAdapter.this.getContext(),"Share Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
+                        break;
+                }
+            }
+        };
+
+        postHolder.likeButton.setOnClickListener(onClickListener);
+        postHolder.commentButton.setOnClickListener(onClickListener);
+        postHolder.shareButton.setOnClickListener(onClickListener);
 
         return row;
     }
@@ -113,6 +136,9 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         public TextView commentsTextView;
         public TextView sharesTextView;
         public TextView viewsTextView;
+        public Button likeButton;
+        public Button shareButton;
+        public Button commentButton;
 
         public PostHolder(View view){
             profilePicTextView = (ImageView) view.findViewById(R.id.profilePicImageView);
@@ -124,6 +150,9 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
             commentsTextView = (TextView) view.findViewById(R.id.commentsTextView);
             sharesTextView = (TextView) view.findViewById(R.id.sharesTextView);
             viewsTextView = (TextView) view.findViewById(R.id.viewsTextView);
+            likeButton = (Button) view.findViewById(R.id.likeButton);
+            shareButton = (Button) view.findViewById(R.id.shareButton);
+            commentButton = (Button) view.findViewById(R.id.commentButton);
         }
     }
 }
