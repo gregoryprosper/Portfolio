@@ -56,10 +56,10 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             if (type == TYPE_TEXT_POST){
-                row = inflater.inflate(R.layout.status_post_row, null);
+                row = inflater.inflate(R.layout.status_post_row, parent, false);
             }
             else if (type == TYPE_IMAGE_POST){
-                row = inflater.inflate(R.layout.image_post_row, null);
+                row = inflater.inflate(R.layout.image_post_row, parent, false);
             }
         }
 
