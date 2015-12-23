@@ -1,17 +1,26 @@
 package gprosper.org.invertimage;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
+import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -87,6 +96,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         saveImageThread.start();
+    }
+
+    public void send(View view) {
+        //Get image file from app pictures dir
+        File imageFile = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),"image.jpg");
+        Uri imageUri = null;
+
+        //Save image to file and create image Uri
+        FileOutputStream out = null;
+        try {
+            out = new FileOutputStream(imageFile);
+            image.compress(Bitmap.CompressFormat.JPEG, 100, out);
+        }
+        catch (FileNotFoundException ex){
+            Toast.makeText(this, "Error Happened: " + ex.getMessage(), Toast.LENGTH_LONG ).show();
+            return;
+        }
+        finally {
+            imageUri = Uri.fromFile(imageFile);
+        }
+
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+
+        //Set Up Intent
+        intent.setType("image/png");
+        intent.putExtra(Intent.EXTRA_STREAM, imageUri);
+        intent.putExtra(Intent.EXTRA_TEXT, "Attached Image");
+
+        Intent chooser = Intent.createChooser(intent,"Send Picture");
+        startActivity(chooser);
     }
 
     private static Bitmap invertImage(Bitmap originalImage) {

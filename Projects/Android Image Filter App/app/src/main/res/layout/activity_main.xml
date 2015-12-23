@@ -13,7 +13,7 @@
         android:id="@+id/imageViewRelativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonsLayout">
+        android:layout_above="@+id/topButtonsLayout">
 
         <ImageView
             android:id="@+id/imageView"
@@ -33,13 +33,12 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/buttonsLayout"
+        android:id="@+id/topButtonsLayout"
         style="?android:attr/buttonBarButtonStyle"
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:layout_above="@+id/bottomButtonsLayout"
         android:layout_centerHorizontal="true">
 
         <Button
@@ -47,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Invert"
+            android:textSize="12sp"
             android:onClick="invertButtonClicked"/>
 
         <Button
@@ -54,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Reset"
+            android:textSize="12sp"
             android:onClick="resetButtonClicked"/>
 
         <Button
@@ -61,14 +62,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Filter"
+            android:textSize="12sp"
             android:onClick="filterButtonClicked"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomButtonsLayout"
+        style="?android:attr/buttonBarButtonStyle"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
 
         <Button
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
+            android:textSize="12sp"
             android:onClick="saveImage"/>
+
+        <Button
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:textSize="12sp"
+            android:onClick="send"/>
     </LinearLayout>
 
 </RelativeLayout>
