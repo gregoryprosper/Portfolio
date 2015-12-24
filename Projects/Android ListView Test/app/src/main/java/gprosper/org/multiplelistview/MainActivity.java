@@ -52,8 +52,19 @@ public class MainActivity extends AppCompatActivity {
         Bitmap postImage = ((BitmapDrawable) getResources().getDrawable(R.drawable.post)).getBitmap();
         gregsPost.setImage(postImage);
 
-
         //Post 3
+        TextPost wilnersPost = new TextPost();
+        wilnersPost.setProfileName("Wilner Prosper");
+        wilnersPost.setStatusText("Can't wait for the Heat game tonight!!!");
+        wilnersPost.setStatusTime("2 hr");
+        wilnersPost.setLikes(123);
+        wilnersPost.setComments(39);
+        wilnersPost.setShares(93);
+
+        Bitmap wilnerProfilePic = ((BitmapDrawable) getResources().getDrawable(R.drawable.wilner)).getBitmap();
+        wilnersPost.setProfilePic(wilnerProfilePic);
+
+        //Post 4
         ImagePost midelinesPost = new ImagePost();
         midelinesPost.setProfileName("Mideline Jean");
         midelinesPost.setCaption("J.Cole!!!!!!");
@@ -72,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         //Add post to ArrayList
         posts.add(kennysPost);
         posts.add(gregsPost);
+        posts.add(wilnersPost);
         posts.add(midelinesPost);
 
         PostArrayAdapter postArrayAdapter = new PostArrayAdapter(this,posts);

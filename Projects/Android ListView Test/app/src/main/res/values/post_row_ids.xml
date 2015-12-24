@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="PostType" type="id"/>
+    <item name="PostHolder" type="id"/>
+</resources>

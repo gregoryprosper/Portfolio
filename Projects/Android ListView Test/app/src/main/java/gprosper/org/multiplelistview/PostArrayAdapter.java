@@ -55,22 +55,24 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         View row = convertView;
         int type = getItemViewType(position);
 
-        if (row == null){
+        if (row == null || type != (int) row.getTag(R.id.PostType)){
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             if (type == TYPE_TEXT_POST){
                 row = inflater.inflate(R.layout.status_post_row, parent, false);
+                row.setTag(R.id.PostType, type);
             }
             else if (type == TYPE_IMAGE_POST){
                 row = inflater.inflate(R.layout.image_post_row, parent, false);
+                row.setTag(R.id.PostType, type);
             }
         }
 
-        PostHolder postHolder = (PostHolder) row.getTag();
+        PostHolder postHolder = (PostHolder) row.getTag(R.id.PostHolder);
 
         if (postHolder == null){
             postHolder = new PostHolder(row);
-            row.setTag(postHolder);
+            row.setTag(R.id.PostHolder, postHolder);
         }
 
         Post post = getItem(position);
@@ -103,7 +105,7 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
     private static void bindPostToHolder(Post post, PostHolder postHolder){
         //Bind Base post properties
         postHolder.profileNameTextView.setText(post.getProfileName());
-        postHolder.profilePicTextView.setImageBitmap(post.getProfilePic());
+        postHolder.profilePicImageView.setImageBitmap(post.getProfilePic());
         postHolder.statusTimeTextView.setText(post.getStatusTime());
         postHolder.commentsTextView.setText(String.format("%s comments",post.getComments()));
         postHolder.likesTextView.setText(String.format("%s likes",post.getLikes()));
@@ -119,7 +121,7 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
     }
 
     private static class PostHolder{
-        public ImageView profilePicTextView;
+        public ImageView profilePicImageView;
         public TextView profileNameTextView;
         public TextView statusTimeTextView;
         public TextView statusContentTextView;
@@ -134,7 +136,7 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         public LinearLayout statusInfo;
 
         public PostHolder(View view){
-            profilePicTextView = (ImageView) view.findViewById(R.id.profilePicImageView);
+            profilePicImageView = (ImageView) view.findViewById(R.id.profilePicImageView);
             profileNameTextView = (TextView) view.findViewById(R.id.profileNameTextView);
             statusTimeTextView = (TextView) view.findViewById(R.id.statusTimeTextView);
             statusContentTextView = (TextView) view.findViewById(R.id.statusContentTextView);
@@ -152,6 +154,7 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
 
     private class ButtonOnClickListener implements View.OnClickListener{
         private Post post;
+
         public ButtonOnClickListener(Post post){
             this.post = post;
         }
