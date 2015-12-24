@@ -48,16 +48,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
         android:layout_marginStart="10dp"
         android:textSize="13sp"
         android:text="On my Way like Ice Berg"/>
 
 
     <LinearLayout
+        android:id="@+id/statusInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp">
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
 
         <TextView
             android:id="@+id/likesTextView"

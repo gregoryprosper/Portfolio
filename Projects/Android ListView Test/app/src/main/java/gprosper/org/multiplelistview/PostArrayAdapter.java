@@ -1,13 +1,16 @@
 package gprosper.org.multiplelistview;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,29 +73,18 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
             row.setTag(postHolder);
         }
 
-        final Post post = getItem(position);
+        Post post = getItem(position);
         bindPostToHolder(post,postHolder);
 
-        View.OnClickListener onClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.likeButton:
-                        Toast.makeText(PostArrayAdapter.this.getContext(),"Like Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case R.id.commentButton:
-                        Toast.makeText(PostArrayAdapter.this.getContext(),"Comment Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case R.id.shareButton:
-                        Toast.makeText(PostArrayAdapter.this.getContext(),"Share Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
-                        break;
-                }
-            }
-        };
+        //Set Onclick Listeners for buttons
+        ButtonOnClickListener buttonOnClickListener = new ButtonOnClickListener(post);
+        postHolder.likeButton.setOnClickListener(buttonOnClickListener);
+        postHolder.commentButton.setOnClickListener(buttonOnClickListener);
+        postHolder.shareButton.setOnClickListener(buttonOnClickListener);
 
-        postHolder.likeButton.setOnClickListener(onClickListener);
-        postHolder.commentButton.setOnClickListener(onClickListener);
-        postHolder.shareButton.setOnClickListener(onClickListener);
+        //Set OnTouch Listeners for status info LinearLayout
+        StatusInfoOnTouchListener statusInfoOnTouchListener = new StatusInfoOnTouchListener(postHolder.statusInfo, post);
+        postHolder.statusInfo.setOnTouchListener(statusInfoOnTouchListener);
 
         return row;
     }
@@ -139,6 +131,7 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         public Button likeButton;
         public Button shareButton;
         public Button commentButton;
+        public LinearLayout statusInfo;
 
         public PostHolder(View view){
             profilePicTextView = (ImageView) view.findViewById(R.id.profilePicImageView);
@@ -153,6 +146,59 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
             likeButton = (Button) view.findViewById(R.id.likeButton);
             shareButton = (Button) view.findViewById(R.id.shareButton);
             commentButton = (Button) view.findViewById(R.id.commentButton);
+            statusInfo = (LinearLayout) view.findViewById(R.id.statusInfo);
+        }
+    }
+
+    private class ButtonOnClickListener implements View.OnClickListener{
+        private Post post;
+        public ButtonOnClickListener(Post post){
+            this.post = post;
+        }
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.likeButton:
+                    Toast.makeText(PostArrayAdapter.this.getContext(),"Like Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
+                    break;
+                case R.id.commentButton:
+                    Toast.makeText(PostArrayAdapter.this.getContext(),"Comment Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
+                    break;
+                case R.id.shareButton:
+                    Toast.makeText(PostArrayAdapter.this.getContext(),"Share Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
+                    break;
+            }
+        }
+    }
+
+    private class StatusInfoOnTouchListener implements View.OnTouchListener{
+        private LinearLayout statusInfo;
+        private Post post;
+
+        public StatusInfoOnTouchListener(LinearLayout statusInfo, Post post){
+            this.statusInfo = statusInfo;
+            this.post = post;
+        }
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN){
+                statusInfo.setBackgroundColor(Color.LTGRAY);
+                return true;
+            }
+            else if (event.getAction() == MotionEvent.ACTION_UP){
+                Toast.makeText(PostArrayAdapter.this.getContext(),"Status Info Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
+                statusInfo.setBackgroundColor(Color.TRANSPARENT);
+                return true;
+            }
+            else if (event.getAction() == MotionEvent.ACTION_CANCEL){
+                statusInfo.setBackgroundColor(Color.TRANSPARENT);
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     }
 }
