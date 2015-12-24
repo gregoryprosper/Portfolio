@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import gprosper.org.multiplelistview.model.ImagePost;
 import gprosper.org.multiplelistview.model.Post;
 import gprosper.org.multiplelistview.model.TextPost;
+import gprosper.org.multiplelistview.model.User;
 
 /**
  * Created by a on 12/20/15.
@@ -27,7 +29,8 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
 
     private static final int TYPE_TEXT_POST = 0;
     private static final int TYPE_IMAGE_POST = 1;
-    private static final int TYPE_MAX_COUNT = TYPE_TEXT_POST + 1;
+    private static final int TYPE_STATUS_UPDATE = 2;
+    private static final int TYPE_MAX_COUNT = TYPE_STATUS_UPDATE + 1;
 
     public PostArrayAdapter(Context context, ArrayList<Post> posts){
         super(context,0,posts);
@@ -43,9 +46,13 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         Post post = getItem(position);
         int type = 0;
 
-        if (post instanceof ImagePost) {
+        if (position == 0){
+            type = TYPE_STATUS_UPDATE;
+        }
+        else if (post instanceof ImagePost) {
             type = TYPE_IMAGE_POST;
         }
+
         return type;
     }
 
@@ -58,6 +65,10 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         if (row == null || type != (int) row.getTag(R.id.PostType)){
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
+            if (type == TYPE_STATUS_UPDATE){
+                row = inflater.inflate(R.layout.status_update_row, parent, false);
+                row.setTag(R.id.PostType, type);
+            }
             if (type == TYPE_TEXT_POST){
                 row = inflater.inflate(R.layout.status_post_row, parent, false);
                 row.setTag(R.id.PostType, type);
@@ -76,17 +87,24 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         }
 
         Post post = getItem(position);
-        bindPostToHolder(post,postHolder);
 
-        //Set Onclick Listeners for buttons
-        ButtonOnClickListener buttonOnClickListener = new ButtonOnClickListener(post);
-        postHolder.likeButton.setOnClickListener(buttonOnClickListener);
-        postHolder.commentButton.setOnClickListener(buttonOnClickListener);
-        postHolder.shareButton.setOnClickListener(buttonOnClickListener);
+        if (type == TYPE_TEXT_POST || type == TYPE_IMAGE_POST){
+            bindPostToHolder(post,postHolder);
 
-        //Set OnTouch Listeners for status info LinearLayout
-        StatusInfoOnTouchListener statusInfoOnTouchListener = new StatusInfoOnTouchListener(postHolder.statusInfo, post);
-        postHolder.statusInfo.setOnTouchListener(statusInfoOnTouchListener);
+            //Set Onclick Listeners for buttons
+            StatusButtonOnClickListener statusButtonOnClickListener = new StatusButtonOnClickListener(post);
+            postHolder.likeButton.setOnClickListener(statusButtonOnClickListener);
+            postHolder.commentButton.setOnClickListener(statusButtonOnClickListener);
+            postHolder.shareButton.setOnClickListener(statusButtonOnClickListener);
+
+            //Set OnTouch Listeners for status info LinearLayout
+            StatusInfoOnTouchListener statusInfoOnTouchListener = new StatusInfoOnTouchListener(postHolder.statusInfo, post);
+            postHolder.statusInfo.setOnTouchListener(statusInfoOnTouchListener);
+        }
+        else if (type == TYPE_STATUS_UPDATE){
+            postHolder.statusUpdateProfilePic.setImageBitmap(User.getSharedUser().getProfilePic());
+            postHolder.statusUpdatePostButton.setOnClickListener(new PostButtonOnClickListener());
+        }
 
         return row;
     }
@@ -121,6 +139,12 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
     }
 
     private static class PostHolder{
+        //Status Update Views
+        public ImageView statusUpdateProfilePic;
+        public EditText statusUpdateEditText;
+        public Button statusUpdatePostButton;
+
+        //Post Views
         public ImageView profilePicImageView;
         public TextView profileNameTextView;
         public TextView statusTimeTextView;
@@ -136,6 +160,12 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         public LinearLayout statusInfo;
 
         public PostHolder(View view){
+            //Status Update Views
+            statusUpdateProfilePic = (ImageView) view.findViewById(R.id.statusUpdateProfilePic);
+            statusUpdateEditText = (EditText) view.findViewById(R.id.statusUpdateEditText);
+            statusUpdatePostButton = (Button) view.findViewById(R.id.statusUpdatePostButton);
+
+            //Post Views
             profilePicImageView = (ImageView) view.findViewById(R.id.profilePicImageView);
             profileNameTextView = (TextView) view.findViewById(R.id.profileNameTextView);
             statusTimeTextView = (TextView) view.findViewById(R.id.statusTimeTextView);
@@ -152,10 +182,10 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         }
     }
 
-    private class ButtonOnClickListener implements View.OnClickListener{
+    private class StatusButtonOnClickListener implements View.OnClickListener{
         private Post post;
 
-        public ButtonOnClickListener(Post post){
+        public StatusButtonOnClickListener(Post post){
             this.post = post;
         }
 
@@ -172,6 +202,13 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
                     Toast.makeText(PostArrayAdapter.this.getContext(),"Share Button Clicked for " + post.getProfileName(), Toast.LENGTH_LONG).show();
                     break;
             }
+        }
+    }
+
+    private class PostButtonOnClickListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(PostArrayAdapter.this.getContext(),"Post Added", Toast.LENGTH_LONG).show();
         }
     }
 

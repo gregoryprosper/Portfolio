@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import gprosper.org.multiplelistview.model.ImagePost;
 import gprosper.org.multiplelistview.model.Post;
 import gprosper.org.multiplelistview.model.TextPost;
+import gprosper.org.multiplelistview.model.User;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = (ListView) findViewById(R.id.list);
+
+        //Create User
+
+        User user = User.getSharedUser();
+        user.setName("Gregory Prosper");
+
+        Bitmap gregsProfilePic = ((BitmapDrawable) getResources().getDrawable(R.drawable.greg_pic)).getBitmap();
+        user.setProfilePic(gregsProfilePic);
 
         ArrayList<Post> posts = new ArrayList<>();
 
@@ -46,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         gregsPost.setViews(403);
         gregsPost.setShares(97);
 
-        Bitmap gregsProfilePic = ((BitmapDrawable) getResources().getDrawable(R.drawable.greg_pic)).getBitmap();
         gregsPost.setProfilePic(gregsProfilePic);
 
         Bitmap postImage = ((BitmapDrawable) getResources().getDrawable(R.drawable.post)).getBitmap();
