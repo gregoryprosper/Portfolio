@@ -106,11 +106,12 @@
         style="?android:attr/buttonBarStyle"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="40dp">
 
         <Button
             android:id="@+id/likeButton"
             style="?android:attr/buttonBarButtonStyle"
+            android:drawableStart="@drawable/like"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -120,6 +121,7 @@
         <Button
             android:id="@+id/commentButton"
             style="?android:attr/buttonBarButtonStyle"
+            android:drawableStart="@drawable/comment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -129,6 +131,7 @@
         <Button
             android:id="@+id/shareButton"
             style="?android:attr/buttonBarButtonStyle"
+            android:drawableStart="@drawable/share"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
