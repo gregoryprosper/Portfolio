@@ -220,6 +220,8 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
     private class PostButtonOnClickListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
+            statusUpdateEditText.setText("");
+            unFocusStatusEditText();
             Toast.makeText(PostArrayAdapter.this.getContext(),"Post Added", Toast.LENGTH_LONG).show();
         }
     }

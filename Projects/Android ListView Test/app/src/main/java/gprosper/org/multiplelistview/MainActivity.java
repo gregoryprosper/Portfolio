@@ -4,8 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 
@@ -20,7 +18,22 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
 
+    ArrayList<Post> posts = new ArrayList<>();
     PostArrayAdapter postArrayAdapter;
+
+    AbsListView.OnScrollListener postScrollListener = new AbsListView.OnScrollListener() {
+        @Override
+        public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+        }
+
+        @Override
+        public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            if (firstVisibleItem >= 1){
+                postArrayAdapter.unFocusStatusEditText();
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list);
 
+        createUser();
+        addPosts();
+
+
+        postArrayAdapter = new PostArrayAdapter(this, posts);
+        listView.setAdapter(postArrayAdapter);
+        listView.setOnScrollListener(postScrollListener);
+    }
+
+    private void createUser() {
         //Create User
 
         User user = User.getSharedUser();
         user.setName("Gregory Prosper");
 
-        Bitmap gregsProfilePic = ((BitmapDrawable) getResources().getDrawable(R.drawable.greg_pic)).getBitmap();
-        user.setProfilePic(gregsProfilePic);
+        Bitmap UserPic = ((BitmapDrawable) getResources().getDrawable(R.drawable.greg_pic)).getBitmap();
+        user.setProfilePic(UserPic);
+    }
 
-        ArrayList<Post> posts = new ArrayList<>();
-
+    private void addPosts() {
         //Post 1
         TextPost kennysPost = new TextPost();
         kennysPost.setProfileName("Kenny Prosper");
@@ -60,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         gregsPost.setViews(403);
         gregsPost.setShares(97);
 
+        Bitmap gregsProfilePic = ((BitmapDrawable) getResources().getDrawable(R.drawable.greg_pic)).getBitmap();
         gregsPost.setProfilePic(gregsProfilePic);
 
         Bitmap postImage = ((BitmapDrawable) getResources().getDrawable(R.drawable.post)).getBitmap();
@@ -98,21 +122,5 @@ public class MainActivity extends AppCompatActivity {
         posts.add(gregsPost);
         posts.add(wilnersPost);
         posts.add(midelinesPost);
-
-        postArrayAdapter = new PostArrayAdapter(this,posts);
-        listView.setAdapter(postArrayAdapter);
-        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
-
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                if (firstVisibleItem >= 1){
-                    postArrayAdapter.unFocusStatusEditText();
-                }
-            }
-        });
     }
 }

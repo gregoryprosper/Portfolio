@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/a/Dropbox/Development/Android_Development/MyApps/MultiTemplate ListView TEST/app/build/intermediates/incremental-classes/debug/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cd49ea145bf1560d54d9ce2b0ea79413f954bc0">
+        <dex dex="/Users/a/Dropbox/Development/Android_Development/MyApps/MultiTemplate ListView TEST/app/build/intermediates/pre-dexed/debug/classes_69494d4fe9b3bf23950cbb29230c3a9f310dc458.jar" />
+    </item>
+
+</items>
