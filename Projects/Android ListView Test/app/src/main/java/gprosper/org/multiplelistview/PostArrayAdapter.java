@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,8 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
     private static final int TYPE_IMAGE_POST = 1;
     private static final int TYPE_STATUS_UPDATE = 2;
     private static final int TYPE_MAX_COUNT = TYPE_STATUS_UPDATE + 1;
+
+    private EditText statusUpdateEditText;
 
     public PostArrayAdapter(Context context, ArrayList<Post> posts){
         super(context,0,posts);
@@ -104,9 +107,18 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         else if (type == TYPE_STATUS_UPDATE){
             postHolder.statusUpdateProfilePic.setImageBitmap(User.getSharedUser().getProfilePic());
             postHolder.statusUpdatePostButton.setOnClickListener(new PostButtonOnClickListener());
+            statusUpdateEditText = postHolder.statusUpdateEditText;
         }
 
         return row;
+    }
+
+    public void unFocusStatusEditText(){
+        if (statusUpdateEditText != null && statusUpdateEditText.hasFocus()){
+            statusUpdateEditText.clearFocus();
+            InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(statusUpdateEditText.getWindowToken(), 0);
+        }
     }
 
     private static void bindPostToHolder(TextPost post, PostHolder postHolder){
