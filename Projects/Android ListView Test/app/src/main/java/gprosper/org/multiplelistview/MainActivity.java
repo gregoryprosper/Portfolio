@@ -51,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnScrollListener(postScrollListener);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (!postArrayAdapter.unFocusStatusEditText()){
+            super.onBackPressed();
+        }
+    }
+
     private void createUser() {
         //Create User
 

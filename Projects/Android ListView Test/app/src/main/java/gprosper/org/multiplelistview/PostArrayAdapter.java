@@ -61,36 +61,43 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.d("PostArrayAdapter",String.valueOf(position));
         View row = convertView;
         int type = getItemViewType(position);
 
+        PostHolder postHolder = null;
+        Post post = getItem(position);
+
+        //Create new row if row is null or is not right type
         if (row == null || type != (int) row.getTag(R.id.PostType)){
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             if (type == TYPE_STATUS_UPDATE){
                 row = inflater.inflate(R.layout.status_update_row, parent, false);
                 row.setTag(R.id.PostType, type);
+
+                postHolder = new PostHolder(row);
+                row.setTag(R.id.PostHolder,postHolder);
             }
-            if (type == TYPE_TEXT_POST){
+            else if (type == TYPE_TEXT_POST){
                 row = inflater.inflate(R.layout.status_post_row, parent, false);
                 row.setTag(R.id.PostType, type);
+
+                postHolder = new PostHolder(row);
+                row.setTag(R.id.PostHolder,postHolder);
             }
             else if (type == TYPE_IMAGE_POST){
                 row = inflater.inflate(R.layout.image_post_row, parent, false);
                 row.setTag(R.id.PostType, type);
+
+                postHolder = new PostHolder(row);
+                row.setTag(R.id.PostHolder,postHolder);
             }
         }
-
-        PostHolder postHolder = (PostHolder) row.getTag(R.id.PostHolder);
-
-        if (postHolder == null){
-            postHolder = new PostHolder(row);
-            row.setTag(R.id.PostHolder, postHolder);
+        else{
+            postHolder = (PostHolder) row.getTag(R.id.PostHolder);
         }
 
-        Post post = getItem(position);
-
+        //Edit row based on type
         if (type == TYPE_TEXT_POST || type == TYPE_IMAGE_POST){
             bindPostToHolder(post,postHolder);
 
@@ -113,11 +120,15 @@ public class PostArrayAdapter extends ArrayAdapter<Post> {
         return row;
     }
 
-    public void unFocusStatusEditText(){
+    public boolean unFocusStatusEditText(){
         if (statusUpdateEditText != null && statusUpdateEditText.hasFocus()){
             statusUpdateEditText.clearFocus();
             InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(statusUpdateEditText.getWindowToken(), 0);
+            return true;
+        }
+        else{
+            return false;
         }
     }
 
