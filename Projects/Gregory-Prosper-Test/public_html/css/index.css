@@ -1,0 +1,170 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 14, 2016, 5:31:17 PM
+    Author     : Gregory Prosper
+*/
+
+body{
+    background-color: #ededed !important;
+}
+
+#content{
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12);
+    padding: 20px;
+    background-color: white;
+}
+
+p{
+    font-family: Lato, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.size-full{
+    width: 100%;
+}
+
+.twitter{
+    color: white;
+    border-radius: 5px;
+    background-color: #2eb2e3;
+    width: 233px;
+    height: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 5px;
+}
+
+.facebook{
+    color: white;
+    border-radius: 5px;
+    background-color: #3b5997;
+    width: 233px;
+    height: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.twitter:hover{
+    background-color: #0085b7;
+}
+
+.facebook:hover{
+    background-color: #1c4497;
+}
+
+.social-container{
+    height: 50px;
+    margin-bottom: 50px;
+}
+
+.social-container a:hover{
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.heading{
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 15px;
+}
+
+#sources a{
+    word-wrap: break-word;
+}
+
+@media(max-width: 533px){
+    iframe{
+        width: 400px;
+        height: 320px;
+    }
+}
+
+@media(max-width: 414px){
+    .twitter{
+        width: 116px;
+        height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .facebook{
+        width: 116px;
+        height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    iframe{
+        width: 350px;
+        height: 240px;
+    }
+    
+    .heading{
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 375px){
+    .twitter{
+        font-size: 12px;
+        width: 87px;
+        height: 18px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .facebook{
+        font-size: 12px;
+        width: 87px;
+        height: 18px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    iframe{
+        width: 262px;
+        height: 180px;
+    }
+}
+
+@media(max-width: 360px){
+    .twitter{
+        font-size: 10px;
+        width: 65px;
+        height: 13px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .facebook{
+        font-size: 10px;
+        width: 65px;
+        height: 13px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    p{
+        font-size: 12px;
+    }
+}

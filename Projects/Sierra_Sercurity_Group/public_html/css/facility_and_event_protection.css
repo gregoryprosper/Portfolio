@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 4, 2016, 6:40:28 PM
+    Author     : Gregory Prosper
+*/
+
+#MyCarousel{
+    background-color: black;
+    width: 100%;
+}
+
+.carousel_image{
+    margin: 0 auto;
+    width: 60% !important;
+    height: 500px !important;
+}
+
+.row p{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+}
+
+@media (max-width: 800px){
+    .carousel_image{
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 603px){
+    h1{
+        font-size: 3em !important;
+    }
+    
+    .row p{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 533px){
+    .carousel_image{
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 414px){
+    h1{
+        font-size: 1em !important;
+    }
+    
+    .carousel_image{
+        height: 250px !important;
+    }
+}
+
+@media (max-width: 375px){
+    .carousel_image{
+        height: 200px !important;
+    }
+}

@@ -1,6 +1,6 @@
 ﻿//************************************************
 //
-// (c) Copyright 2015 Dr. Thomas Fernandez
+// (c) Copyright 2015 Gregory Prosper
 //
 // All rights reserved.
 //

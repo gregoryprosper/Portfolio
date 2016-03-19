@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 5, 2016, 6:27:11 PM
+    Author     : Gregory Prosper
+*/
+
+.col-md-12, .col-md-6{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#big_logo{
+    width: 300px;
+    height: 150px;
+}
+
+.required-field:after {
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 3px;
+    top: 0px;
+}
+
+#googleLogo{
+    margin-top: 5px;
+}
+
+@media (max-width: 800px){
+    #googleLogo{
+        height: 10px;
+        width: auto;
+    }
+}
+
+@media (max-width: 414px){
+    #big_logo{
+        width: 200px;
+        height: 100px;
+    }
+    
+    h1{
+        font-size: 2em !important;
+    }
+}
+
+@media (max-width: 320px){
+    #big_logo{
+        width: 150px;
+        height: 75px;
+    }
+    
+    h1{
+        font-size: 1em !important;
+    }
+}

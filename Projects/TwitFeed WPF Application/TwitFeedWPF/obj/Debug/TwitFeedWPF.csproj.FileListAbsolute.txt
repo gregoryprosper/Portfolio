@@ -36,3 +36,6 @@ V:\School\Fall 2015\Graphical Application Development\Assignments\Final Project\
 V:\School\Fall 2015\Graphical Application Development\Assignments\Final Project\TwitFeedWPF\TwitFeedWPF\obj\Debug\TwitFeedWPF.g.resources
 V:\School\Fall 2015\Graphical Application Development\Assignments\Final Project\TwitFeedWPF\TwitFeedWPF\obj\Debug\TwitFeedWPF.Properties.Resources.resources
 V:\School\Fall 2015\Graphical Application Development\Assignments\Final Project\TwitFeedWPF\TwitFeedWPF\obj\Debug\TwitFeedWPF.csproj.GenerateResource.Cache
+V:\Misc\Portfolio\Projects\TwitFeed WPF Application\TwitFeedWPF\bin\Debug\TwitFeedWPF.exe.config
+V:\Misc\Portfolio\Projects\TwitFeed WPF Application\TwitFeedWPF\obj\Debug\TwitFeedWPF.exe
+V:\Misc\Portfolio\Projects\TwitFeed WPF Application\TwitFeedWPF\obj\Debug\TwitFeedWPF.pdb

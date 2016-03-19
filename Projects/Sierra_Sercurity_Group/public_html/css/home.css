@@ -1,0 +1,199 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 4, 2016, 4:51:33 PM
+    Author     : Gregory Prosper
+*/
+
+#cover{
+    padding-top: 0px !important;
+    margin-bottom: 0px !important;
+    background: url("../images/cover.jpeg");
+    background-repeat: no-repeat ;
+    background-size: 100%, 600px;
+    background-position: center;
+    background-color: transparent !important;
+    height: 600px;
+}
+
+#coverOverlay{
+    padding-top: 75px;
+    height: 600px;
+}
+
+#jumbotronContent{
+    margin: 0 auto;
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(255,255,255,.75);
+    border-radius: 30px;
+}
+
+#jumbotronContentImage{
+    display: block;
+    margin: 0 auto;
+}
+
+#jumbotronContentText{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    width: 600px;
+    text-align: center;
+    color: white;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+
+.mainRowContent{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex; 
+    align-items: center
+}
+
+#company_desc{
+    background-color: #F3F0F1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#services_desc{
+    background-color: #3775B7; 
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media (min-width: 604px) and (max-width: 800px){
+    #cover{
+        height: 500px;
+    }
+
+    #coverOverlay{
+        height: 500px;
+    }
+}
+
+@media (min-width: 534px) and (max-width: 603px){
+    #cover{
+        height: 400px;
+    }
+
+    #coverOverlay{
+        height: 400px;
+    }
+
+    #jumbotronContentImage{
+        height: 100px;
+    }
+    
+    #jumbotronContentText{
+        width: 500px;
+    }
+
+    #jumbotronContentText h3{
+        font-size: 1em;
+    }
+
+    #company_desc{
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    #services_desc{
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 533px){
+    #cover{
+        height: 300px;
+    }
+    
+    #jumbotronContent{
+        width: 250px;
+    }
+
+    #coverOverlay{
+        padding-top: 50px;
+        height: 300px;
+    }
+    
+    #jumbotronContentImage{
+        height: 50px;
+    }
+    
+    #jumbotronContentText{
+        margin-bottom: 25px;
+        width: 400px;
+    }
+    
+    #jumbotronContentText h3{
+        font-size: 12px;
+    }
+    
+    h1{
+        font-size: 2em !important;
+    }
+    
+    #company_desc{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    #services_desc{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+@media (max-width: 414px){
+    h1{
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 375px){
+    #cover{
+        height: 250px;
+    }
+    
+    #coverOverlay{
+        padding-top: 25px;
+        height: 250px;
+    }
+    
+    #jumbotronContent{
+        width: 200px;
+    }
+    
+    #jumbotronContentText{
+        width: 300px;
+    }
+    
+    #coverOverlay a{
+        width: 90px;
+        height: 32px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px){
+    #cover{
+       height: 225px; 
+    }
+    
+    #coverOverlay{
+        height: 225px;
+        padding-top: 15px;
+    }
+    
+    #jumbotronContentText{
+        margin-bottom: 10px;
+    }
+}

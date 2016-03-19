@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 2, 2016, 1:22:13 PM
+    Author     : Gregory Prosper
+*/
+
+.navbar{
+    margin-bottom: 0px !important;
+}
+
+.navbar-text{
+    color: #3775B7 !important;
+}
+
+.overlay{
+     z-index: 2;
+     background: rgba(39,62,84,0.50);
+}
+
+.TextTooBigForMobile{
+    font-size:x-large ;
+    font-weight: bold;
+}
+
+#footer{
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    background-color: black;
+}
+
+.content{
+    background-color: #F3F0F1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 767px){
+    .navbar-header{
+        display: inline-block;
+    }
+    
+    #lineButton{
+        margin-top: 10px;
+        display: inline-block;
+    }
+    
+    #footer{
+        padding-bottom: 25px;
+        padding-top: 25px;
+    }
+}

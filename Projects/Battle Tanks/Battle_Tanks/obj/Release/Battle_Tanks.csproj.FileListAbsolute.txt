@@ -14,3 +14,6 @@ V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\WPF_Game0
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\Battle Tanks\Battle_Tanks\bin\Release\BattleTanks.exe.config
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\Battle Tanks\Battle_Tanks\obj\Release\BattleTanks.exe
 V:\School\Fall 2015\Graphical Application Development\Assignments\HW 3\Battle Tanks\Battle_Tanks\obj\Release\BattleTanks.pdb
+V:\Misc\Portfolio\Projects\Battle Tanks\Battle_Tanks\bin\Release\BattleTanks.exe.config
+V:\Misc\Portfolio\Projects\Battle Tanks\Battle_Tanks\obj\Release\BattleTanks.exe
+V:\Misc\Portfolio\Projects\Battle Tanks\Battle_Tanks\obj\Release\BattleTanks.pdb

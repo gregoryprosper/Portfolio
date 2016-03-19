@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 6, 2016, 1:35:59 AM
+    Author     : Gregory Prosper
+*/
+
+
+#confirmation{
+    border-radius: 15px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: white;
+}
+
+.confirmationText{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#backIcon{
+    width: 25px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#backBanner{
+    color: white;
+    width: 100%;
+    background-color: #3775B7;
+    margin-top: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 100px;
+}
+
+#backBanner a{
+    color: silver;
+}
+
+#backBanner p{
+    margin-bottom: 0px !important;
+}
+
+@media (max-width: 533px){
+    #confirmation{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .confirmationText{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    #backBanner{
+        padding-left: 50px;
+    }
+    
+    h4{
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 414px){
+    #confirmation{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 50px;
+    }
+    
+    .confirmationText{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .confirmationText h1{
+        font-size: 2em;
+    }
+    
+    #backBanner{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+    }
+    
+    h4{
+        font-size: 1em;
+    }
+}
