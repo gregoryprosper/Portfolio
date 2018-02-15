@@ -1,24 +1,19 @@
 package com.gprosper.devradio.fragments
 
 
-import android.content.BroadcastReceiver
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.gprosper.devradio.R
 import com.gprosper.devradio.adapters.StationsAdapter
 import com.gprosper.devradio.constants.BROADCAST_STATION_CLICKED
 import com.gprosper.devradio.services.DataService
-import kotlinx.android.synthetic.main.content_stations_recycler.view.*
 
 
 /**
@@ -40,6 +35,8 @@ class StationsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_stations, container, false).apply {
+            val recyclerView = findViewById<RecyclerView>(R.id.stations_recyclerView)
+
             val stations = when(stationType){
                 STATION_TYPE_FEATURED -> DataService.getFeaturedStations()
                 STATION_TYPE_RECENT -> DataService.getFeaturedStations()
@@ -55,19 +52,12 @@ class StationsFragment : Fragment() {
                 }
             }
 
-            stations_recyclerView.setHasFixedSize(true)
-            stations_recyclerView.adapter = stationsAdapter
-            stations_recyclerView.addItemDecoration(HorizontalSpaceItemDecorator(30))
-            stations_recyclerView.layoutManager = LinearLayoutManager(context).apply {
+            recyclerView.setHasFixedSize(true)
+            recyclerView.adapter = stationsAdapter
+            recyclerView.addItemDecoration(HorizontalSpaceItemDecorator(30))
+            recyclerView.layoutManager = LinearLayoutManager(context).apply {
                 orientation = LinearLayoutManager.HORIZONTAL
             }
-        }
-    }
-
-    class HorizontalSpaceItemDecorator(private val spacer: Int) : RecyclerView.ItemDecoration() {
-        override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
-            super.getItemOffsets(outRect, view, parent, state)
-            outRect?.right = spacer
         }
     }
 
@@ -84,6 +74,13 @@ class StationsFragment : Fragment() {
             args.putInt(ARG_STATION_TYPE, stationType)
             fragment.arguments = args
             return fragment
+        }
+    }
+
+    class HorizontalSpaceItemDecorator(private val spacer: Int) : RecyclerView.ItemDecoration() {
+        override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
+            super.getItemOffsets(outRect, view, parent, state)
+            outRect?.right = spacer
         }
     }
 }

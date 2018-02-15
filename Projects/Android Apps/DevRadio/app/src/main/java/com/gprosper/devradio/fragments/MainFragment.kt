@@ -3,11 +3,9 @@ package com.gprosper.devradio.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.gprosper.devradio.R
 
 
@@ -19,17 +17,16 @@ import com.gprosper.devradio.R
 class MainFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.d("MainFragment", "onCreate")
         super.onCreate(savedInstanceState)
         if (arguments != null) {
+
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        Log.d("MainFragment", "onCreateView")
         return inflater!!.inflate(R.layout.fragment_main, container, false).apply {
-            activity.supportFragmentManager.let {
+            childFragmentManager.let {
                 var stationFragment1 = it.findFragmentById(R.id.container_top_row)
                 if (stationFragment1 == null){
                     stationFragment1 = StationsFragment.newInstance(StationsFragment.STATION_TYPE_FEATURED)
@@ -57,5 +54,4 @@ class MainFragment : Fragment() {
             return fragment
         }
     }
-
 }
